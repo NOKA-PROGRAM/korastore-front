@@ -17,6 +17,11 @@ const shopItems = [
     { label: 'Maison & Cuisine', href: '/boutique/maison' },
     { label: 'Beauté & Cosmétiques', href: '/boutique/beaute' },
     { label: 'Sport & Plein air', href: '/boutique/sport' },
+    { label: 'Santé & Bien-être', href: '/boutique/sante' },
+    { label: 'Bébé, enfants & jouets', href: '/boutique/bebe' },
+    { label: 'Epicerie & Alimentation', href: '/boutique/epicerie' },
+    { label: 'Auto & Moto', href: '/boutique/auto' },
+    { label: 'Bureau & Productivité', href: '/boutique/bureau' },
 ];
 
 const helpItems = [
@@ -32,9 +37,7 @@ export default function Header() {
 
     return (
         <header className="w-full sticky top-0 z-40">
-            {/* ─────────────────────────────────────────────────────────────
-          MOBILE HEADER  (visible sous md)
-      ───────────────────────────────────────────────────────────── */}
+            {/* MOBILE HEADER */}
             <div className="md:hidden bg-gray-900 px-4 pt-3 pb-3">
                 {/* Row 1 : Logo — Icons */}
                 <div className="flex items-center justify-between mb-3">
@@ -175,7 +178,7 @@ export default function Header() {
                             </div>
 
                             {/* Footer */}
-                            <div className="px-4 py-6 border-t border-gray-200 space-y-4">
+                            <div className="px-4 py-6 space-y-4">
                                 <div className="text-center">
                                     <h3 className="text-gray-900 font-bold text-base mb-4">Besoin d'assistance?</h3>
                                     <a
@@ -197,7 +200,7 @@ export default function Header() {
             {/* ─────────────────────────────────────────────────────────────
           DESKTOP HEADER  (visible à partir de md)
       ───────────────────────────────────────────────────────────── */}
-            <div className="hidden md:flex items-center justify-between bg-white border-b border-gray-100 px-6 lg:px-10 xl:px-16 h-16 gap-6 max-w-400 mx-auto w-full">
+            <div className="hidden md:flex items-center justify-between bg-white border-b border-gray-100 px-6 lg:px-10 xl:px-16 h-20 gap-6 w-full mx-auto relative">
                 {/* Logo */}
                 <Link
                     href="/"
@@ -217,46 +220,61 @@ export default function Header() {
                 </div>
 
                 {/* Nav links */}
-                <nav aria-label="Navigation principale" className="flex items-center gap-6 lg:gap-8 shrink-0 relative">
+                <nav aria-label="Navigation principale" className="flex items-center gap-6 lg:gap-8 shrink-0 static h-full">
                     {/* ACCUEIL */}
                     <Link
                         href="/"
-                        className="text-gray-600 hover:text-orange-600 font-bold text-sm tracking-wide transition-colors"
+                        className="text-gray-600 hover:text-orange-600 font-bold text-sm tracking-wide transition-colors h-full flex items-center px-2"
                     >
                         ACCUEIL
                     </Link>
 
                     {/* BOUTIQUE with Mega Menu */}
                     <div
-                        className="relative group"
+                        className="group flex items-center h-full static"
                         onMouseEnter={() => setMegaMenuOpen('boutique')}
                         onMouseLeave={() => setMegaMenuOpen(null)}
                     >
                         <button
-                            className="text-gray-600 hover:text-orange-600 font-bold text-sm tracking-wide transition-colors flex items-center gap-1"
+                            className="text-gray-600 hover:text-orange-600 font-bold text-sm tracking-wide transition-colors flex items-center gap-1 h-full px-2"
                         >
                             BOUTIQUE
                             <ChevronDown className="w-4 h-4 group-hover:rotate-180 transition-transform duration-200" />
                         </button>
 
                         {/* Full-Width Mega Menu */}
-                        <div className="absolute left-0 right-0 top-full mt-5 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 z-50 pointer-events-none group-hover:pointer-events-auto">
-                            <div className="fixed left-0 right-0 bg-white border-b border-gray-100 shadow-lg">
-                                <div className="max-w-7xl mx-auto px-6 lg:px-10 xl:px-16 py-8">
-                                    <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-8">
-                                        {shopItems.map((item, index) => (
-                                            <div key={item.href} className="flex flex-col">
-                                                <p className="text-[10px] font-bold text-gray-400 uppercase tracking-wider mb-3">
-                                                    Cat. {index + 1}
-                                                </p>
+                        <div
+                            className={`absolute left-0 right-0 top-full transition-all duration-300 z-50 origin-top ${megaMenuOpen === 'boutique'
+                                ? 'opacity-100 visible scale-y-100 pointer-events-auto'
+                                : 'opacity-0 invisible scale-y-95 pointer-events-none'
+                                }`}
+                        >
+                            <div className="bg-white border-t border-gray-100 shadow-[0_10px_40px_-10px_rgba(0,0,0,0.1)]">
+                                <div className="max-w-[1600px] mx-auto px-6 lg:px-10 xl:px-16 py-10">
+                                    <div className="flex gap-12 xl:gap-24">
+                                        <div className="w-64 xl:w-80 shrink-0">
+                                            <h3 className="text-gray-900 font-extrabold text-lg mb-3">Boutique</h3>
+                                            <p className="text-gray-500 text-sm mb-6 leading-relaxed">
+                                                Découvrez notre vaste catalogue de produits sélectionnés pour vous. Des nouveautés chaque semaine.
+                                            </p>
+                                            <Link href="/boutique" className="inline-flex items-center justify-center bg-orange-500 hover:bg-orange-600 text-white font-bold text-sm py-2 px-6 rounded-full transition-colors">
+                                                Voir tout &rarr;
+                                            </Link>
+                                        </div>
+                                        <div className="flex-1 grid grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-x-8 gap-y-10">
+                                            {shopItems.map((item) => (
                                                 <Link
+                                                    key={item.href}
                                                     href={item.href}
-                                                    className="text-gray-900 hover:text-orange-600 font-semibold text-sm transition-colors"
+                                                    className="group/link flex flex-col gap-2"
                                                 >
-                                                    {item.label}
+                                                    <span className="text-gray-900 font-bold text-sm transition-colors group-hover/link:text-orange-600">
+                                                        {item.label}
+                                                    </span>
+                                                    <span className="text-gray-500 text-xs transition-colors group-hover/link:text-orange-500">Explorer les articles &rarr;</span>
                                                 </Link>
-                                            </div>
-                                        ))}
+                                            ))}
+                                        </div>
                                     </div>
                                 </div>
                             </div>
@@ -265,35 +283,55 @@ export default function Header() {
 
                     {/* AIDE with Mega Menu */}
                     <div
-                        className="relative group"
+                        className="group flex items-center h-full static"
                         onMouseEnter={() => setMegaMenuOpen('aide')}
                         onMouseLeave={() => setMegaMenuOpen(null)}
                     >
                         <button
-                            className="text-gray-600 hover:text-orange-600 font-bold text-sm tracking-wide transition-colors flex items-center gap-1"
+                            className="text-gray-600 hover:text-orange-600 font-bold text-sm tracking-wide transition-colors flex items-center gap-1 h-full px-2"
                         >
                             AIDE
                             <ChevronDown className="w-4 h-4 group-hover:rotate-180 transition-transform duration-200" />
                         </button>
 
                         {/* Full-Width Mega Menu */}
-                        <div className="absolute left-0 right-0 top-full mt-4 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 z-50 pointer-events-none group-hover:pointer-events-auto">
-                            <div className="fixed left-0 right-0 bg-white border-b border-gray-100 shadow-lg">
-                                <div className="max-w-7xl mx-auto px-6 lg:px-10 xl:px-16 py-8">
-                                    <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-8">
-                                        {helpItems.map((item, index) => (
-                                            <div key={item.href} className="flex flex-col">
-                                                <p className="text-[10px] font-bold text-gray-400 uppercase tracking-wider mb-3">
-                                                    Rubrique {index + 1}
+                        <div
+                            className={`absolute left-0 right-0 top-full transition-all duration-300 z-50 origin-top ${megaMenuOpen === 'aide'
+                                ? 'opacity-100 visible scale-y-100 pointer-events-auto'
+                                : 'opacity-0 invisible scale-y-95 pointer-events-none'
+                                }`}
+                        >
+                            <div className="bg-white border-t border-gray-100 shadow-[0_10px_40px_-10px_rgba(0,0,0,0.1)]">
+                                <div className="max-w-[1600px] mx-auto px-6 lg:px-10 xl:px-16 py-10">
+                                    <div className="flex gap-12 xl:gap-24">
+                                        <div className="w-64 xl:w-80 shrink-0">
+                                            <div className="bg-gray-50 rounded-2xl p-6">
+                                                <h3 className="text-gray-900 font-extrabold text-md mb-2 flex items-center gap-2">
+                                                    <MessageCircle className="w-5 h-5 text-orange-500" />
+                                                    Support Client
+                                                </h3>
+                                                <p className="text-gray-500 text-sm mb-4 leading-relaxed">
+                                                    Besoin d'aide ? Notre équipe est disponible pour vous assister.
                                                 </p>
-                                                <Link
-                                                    href={item.href}
-                                                    className="text-gray-900 hover:text-orange-600 font-semibold text-sm transition-colors"
-                                                >
-                                                    {item.label}
-                                                </Link>
+                                                <a href="https://wa.me/+221771234567" target="_blank" rel="noreferrer" className="inline-flex w-full items-center justify-center bg-[#25D366] hover:bg-[#128C7E] text-white font-bold text-sm py-2 px-4 rounded-full transition-colors">
+                                                    Contact WhatsApp
+                                                </a>
                                             </div>
-                                        ))}
+                                        </div>
+                                        <div className="flex-1 grid grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-x-8 gap-y-10">
+                                            {helpItems.map((item) => (
+                                                <Link
+                                                    key={item.href}
+                                                    href={item.href}
+                                                    className="group/link flex flex-col gap-2"
+                                                >
+                                                    <span className="text-gray-900 font-bold text-sm transition-colors group-hover/link:text-orange-600">
+                                                        {item.label}
+                                                    </span>
+                                                    <span className="text-gray-500 text-xs transition-colors group-hover/link:text-orange-500">Trouver une solution &rarr;</span>
+                                                </Link>
+                                            ))}
+                                        </div>
                                     </div>
                                 </div>
                             </div>
