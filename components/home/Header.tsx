@@ -182,7 +182,7 @@ export default function Header() {
                                 <div className="text-center">
                                     <h3 className="text-gray-900 font-bold text-base mb-4">Besoin d'assistance?</h3>
                                     <a
-                                        href="https://wa.me/+221771234567"
+                                        href="https://wa.me/+22899682556"
                                         target="_blank"
                                         rel="noopener noreferrer"
                                         className="inline-flex items-center justify-center gap-2 w-full bg-green-500 hover:bg-green-600 text-white font-semibold py-3 rounded-lg transition-colors"
