@@ -15,7 +15,7 @@ export default function BackToTop() {
         aria-label="Retour en haut de page"
         className="
           inline-flex items-center gap-2
-          bg-orange-600 hover:bg-orange-700
+          bg-[#FB8500] hover:bg-[#FB8500]
           text-white font-semibold
           px-6 py-3
           rounded-full
