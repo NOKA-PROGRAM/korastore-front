@@ -110,7 +110,7 @@ export default function Header() {
                             {/* Menu Items */}
                             <div className="flex-1 px-4 py-6">
                                 <AccordionPrimitive.Root type="single" collapsible className="space-y-2">
-                                    {/* COMPTE - Added to burger menu */}
+                                    {/* COMPTE - Added to burger menu 
                                     <Link
                                         href="/compte"
                                         onClick={() => setMenuOpen(false)}
@@ -118,7 +118,7 @@ export default function Header() {
                                     >
                                         COMPTE
                                     </Link>
-
+                                    */}
                                     {/* ACCUEIL - Regular Link */}
                                     <Link
                                         href="/"
@@ -342,7 +342,7 @@ export default function Header() {
 
                 {/* Right actions: Account + Cart */}
                 <div className="flex items-center gap-4 shrink-0">
-                    {/* Compte */}
+                    {/* Compte 
                     <Link
                         href="/compte"
                         className="flex items-center gap-1.5 text-sm font-bold text-gray-700 hover:text-orange-600 transition-colors"
@@ -351,7 +351,7 @@ export default function Header() {
                         <User className="w-5 h-5" />
                         <span className="hidden lg:inline">Compte</span>
                     </Link>
-
+                    
                     {/* Panier */}
                     <Link
                         href="/panier"

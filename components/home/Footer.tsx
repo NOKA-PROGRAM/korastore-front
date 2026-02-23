@@ -9,14 +9,11 @@ export default function Footer() {
 
         {/* LOGO */}
         <div className="flex justify-center md:justify-start mb-10">
-          <Link href="/">
-            <Image
-              src="/logo.png" // 🔁 remplace si nécessaire
-              alt="Korastore Logo"
-              width={160}
-              height={50}
-              className="object-contain"
-            />
+          <Link
+            href="/"
+            className="text-white text-2xl lg:text-3xl font-extrabold tracking-tight shrink-0 font-title"
+          >
+            korastore
           </Link>
         </div>
 
