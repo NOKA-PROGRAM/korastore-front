@@ -38,47 +38,39 @@ export default function Header() {
     return (
         <header className="w-full sticky top-0 z-40">
             {/* MOBILE HEADER */}
-            <div className="md:hidden bg-gray-900 px-4 pt-3 pb-3">
-                {/* Row 1 : Logo — Icons */}
-                <div className="flex items-center justify-between mb-3">
+            <div className="md:hidden bg-[#FB8500] px-4 pt-3 pb-4">
+                {/* Row 1 : Icons — Logo — Cart */}
+                <div className="flex items-center justify-between mb-4 relative">
+                    {/* Burger */}
+                    <button
+                        aria-label={menuOpen ? 'Fermer le menu' : 'Ouvrir le menu'}
+                        onClick={() => setMenuOpen(!menuOpen)}
+                        className="text-white hover:text-orange-100 transition-colors"
+                    >
+                        {menuOpen ? <X className="w-7 h-7" /> : <Menu className="w-7 h-7" />}
+                    </button>
+
                     {/* Logo */}
-                    <Link href="/" className="text-white text-2xl font-extrabold tracking-tight font-title">
+                    <Link href="/" className="text-white text-2xl font-extrabold tracking-tight font-title absolute left-1/2 -translate-x-1/2">
                         korastore
                     </Link>
 
-                    {/* Icons */}
-                    <div className="flex items-center gap-3">
-                        {/* Profile */}
-                        <button aria-label="Mon compte" className="text-gray-300 hover:text-white transition-colors">
-                            <User className="w-6 h-6" />
-                        </button>
-
-                        {/* Cart */}
-                        <Link href="/panier" aria-label="Mon panier" className="relative text-gray-300 hover:text-white transition-colors">
-                            <ShoppingCart className="w-6 h-6" />
-                            <span className="absolute -top-1.5 -right-1.5 bg-orange-500 text-white text-[10px] font-extrabold w-4 h-4 rounded-full flex items-center justify-center">
-                                2
-                            </span>
-                        </Link>
-
-                        {/* Burger */}
-                        <button
-                            aria-label={menuOpen ? 'Fermer le menu' : 'Ouvrir le menu'}
-                            onClick={() => setMenuOpen(!menuOpen)}
-                            className="text-gray-300 hover:text-white transition-colors"
-                        >
-                            {menuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
-                        </button>
-                    </div>
+                    {/* Cart */}
+                    <Link href="/panier" aria-label="Mon panier" className="relative text-white hover:text-orange-100 transition-colors">
+                        <ShoppingCart className="w-7 h-7" />
+                        <span className="absolute -top-1.5 -right-2 bg-rose-600 text-white text-[10px] font-extrabold w-4.5 h-4.5 min-w-4.5 min-h-4.5 rounded-full flex items-center justify-center px-0.5 shadow-sm border border-orange-500">
+                            2
+                        </span>
+                    </Link>
                 </div>
 
                 {/* Row 2 : Search bar */}
-                <div className="bg-gray-800 border border-gray-700 rounded-full flex items-center px-4 py-2 w-full focus-within:border-orange-400 transition-colors">
+                <div className="bg-white rounded-full flex items-center px-4 py-2 w-full shadow-inner focus-within:ring-2 focus-within:ring-white/50 transition-colors">
                     <Search className="text-gray-400 w-4 h-4 mr-2 shrink-0" />
                     <input
                         type="search"
                         placeholder="Rechercher..."
-                        className="bg-transparent w-full text-sm outline-none placeholder-gray-500 text-gray-100"
+                        className="bg-transparent w-full text-sm outline-none placeholder-gray-500 text-gray-800"
                     />
                 </div>
 
@@ -118,6 +110,15 @@ export default function Header() {
                             {/* Menu Items */}
                             <div className="flex-1 px-4 py-6">
                                 <AccordionPrimitive.Root type="single" collapsible className="space-y-2">
+                                    {/* COMPTE - Added to burger menu */}
+                                    <Link
+                                        href="/compte"
+                                        onClick={() => setMenuOpen(false)}
+                                        className="flex items-center gap-3 text-gray-900 font-bold text-lg py-3 px-3 hover:bg-gray-100 rounded-lg transition-colors"
+                                    >
+                                        COMPTE
+                                    </Link>
+
                                     {/* ACCUEIL - Regular Link */}
                                     <Link
                                         href="/"

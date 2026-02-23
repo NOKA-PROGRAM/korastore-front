@@ -15,7 +15,7 @@ export default function ShopByCategory() {
                     </h2>
                     <Link
                         href="/categories"
-                        className="text-sm md:text-base text-orange-600 font-bold flex items-center hover:text-orange-700 transition-colors"
+                        className="text-sm md:text-base text-[#FB8500] font-bold flex items-center hover:text-[#FB8500] transition-colors"
                     >
                         Tout voir
                         <ChevronRight className="w-4 h-4 ml-1 md:w-5 md:h-5" />

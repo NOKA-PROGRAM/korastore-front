@@ -53,7 +53,7 @@ export default function FAQ() {
         <p className="text-sm md:text-base text-gray-700 mb-4 leading-relaxed">
           KORASTORE s'adresse principalement à une clientèle qui recherche de la proximité, de la transparence et de la qualité sans compromis.
         </p>
-        <p className="text-sm md:text-base text-orange-600 font-bold leading-relaxed">
+        <p className="text-sm md:text-base text-[#FB8500] font-bold leading-relaxed">
           Des prix cassés pour chaque saison, chaque fête et chaque fin de mois : commandez sans crainte, payez à l'arrivée!
         </p>
       </div>
