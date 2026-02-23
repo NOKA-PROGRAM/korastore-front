@@ -9,9 +9,18 @@ export default function ShopByCategory() {
         <section className="w-full bg-white">
             <div className="max-w-7xl mx-auto px-4 py-10 md:py-14">
 
-                <h2 className="text-xl md:text-3xl font-bold text-gray-900 mb-6 md:mb-10">
-                    Catégories
-                </h2>
+                <div className="flex justify-between items-center mb-6 md:mb-10">
+                    <h2 className="text-xl md:text-3xl font-bold text-gray-900">
+                        Catégories
+                    </h2>
+                    <Link
+                        href="/categories"
+                        className="text-sm md:text-base text-orange-600 font-bold flex items-center hover:text-orange-700 transition-colors"
+                    >
+                        Tout voir
+                        <ChevronRight className="w-4 h-4 ml-1 md:w-5 md:h-5" />
+                    </Link>
+                </div>
 
                 {/* GRID */}
                 <div className="grid grid-cols-4 sm:grid-cols-4 md:grid-cols-5 lg:grid-cols-6 gap-3 md:gap-6 max-w-6xl mx-auto">
@@ -37,20 +46,6 @@ export default function ShopByCategory() {
                             </span>
                         </div>
                     ))}
-
-                    {/* Voir tout */}
-                    <Link
-                        href="/categories"
-                        className="flex flex-col items-center group cursor-pointer"
-                    >
-                        <div className="w-full aspect-square bg-orange-500 rounded-2xl flex items-center justify-center transition-all duration-300 group-hover:bg-orange-600 group-hover:-translate-y-1 shadow-sm">
-                            <ChevronRight className="text-white w-5 h-5 md:w-8 md:h-8" />
-                        </div>
-
-                        <span className="mt-2 text-[11px] md:text-sm font-semibold text-gray-900 text-center">
-                            Tout voir
-                        </span>
-                    </Link>
 
                 </div>
             </div>

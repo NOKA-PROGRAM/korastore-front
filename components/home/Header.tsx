@@ -102,7 +102,7 @@ export default function Header() {
                                 <Link
                                     href="/"
                                     onClick={() => setMenuOpen(false)}
-                                    className="text-gray-900 text-2xl font-extrabold tracking-tight font-title"
+                                    className="text-orange-500 text-2xl font-extrabold tracking-tight font-title"
                                 >
                                     korastore
                                 </Link>
@@ -185,7 +185,7 @@ export default function Header() {
                                         href="https://wa.me/+22899682556"
                                         target="_blank"
                                         rel="noopener noreferrer"
-                                        className="inline-flex items-center justify-center gap-2 w-full bg-green-500 hover:bg-green-600 text-white font-semibold py-3 rounded-lg transition-colors"
+                                        className="inline-flex items-center justify-center gap-2 w-full bg-orange-500 hover:bg-orange-600 text-white font-semibold py-3 rounded-lg transition-colors"
                                     >
                                         <MessageCircle className="w-5 h-5" />
                                         Contactez-nous sur WhatsApp

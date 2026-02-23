@@ -91,5 +91,5 @@ export const popularProducts: Product[] = [
         price: '85.000',
         oldPrice: '110.000',
         discount: '-22%',
-    }
+    },
 ];

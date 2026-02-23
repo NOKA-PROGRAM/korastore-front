@@ -23,7 +23,7 @@ export default function PromoSection() {
                 <div className="flex gap-4 md:grid md:grid-cols-2 lg:grid-cols-3 overflow-x-auto snap-x pb-6 scrollbar-hide md:overflow-visible">
 
                     {/* Card 1 */}
-                    <div className="relative w-72 md:w-full shrink-0 h-105 md:h-125 lg:h-140 rounded-2xl overflow-hidden snap-center shadow-lg hover:shadow-xl transition-shadow">
+                    <div className="relative w-[288.8px] md:w-full shrink-0 h-[409px] md:h-125 lg:h-140 rounded-2xl overflow-hidden snap-center shadow-lg hover:shadow-xl transition-shadow">
 
                         {/* Image FULL */}
                         <Image
@@ -53,7 +53,7 @@ export default function PromoSection() {
                     </div>
 
                     {/* Card 2 */}
-                    <div className="relative w-72 md:w-full shrink-0 h-105 md:h-125 lg:h-140 rounded-2xl overflow-hidden snap-center shadow-lg hover:shadow-xl transition-shadow">
+                    <div className="relative w-[288.8px] md:w-full shrink-0 h-[409px] md:h-125 lg:h-140 rounded-2xl overflow-hidden snap-center shadow-lg hover:shadow-xl transition-shadow">
 
                         {/* Image FULL */}
                         <Image
@@ -83,7 +83,7 @@ export default function PromoSection() {
                     </div>
 
                     {/* Card 3 */}
-                    <div className="relative w-72 md:w-full shrink-0 h-105 md:h-125 lg:h-140 rounded-2xl overflow-hidden snap-center shadow-lg hover:shadow-xl transition-shadow">
+                    <div className="relative w-[288.8px] md:w-full shrink-0 h-[409px] md:h-125 lg:h-140 rounded-2xl overflow-hidden snap-center shadow-lg hover:shadow-xl transition-shadow">
 
                         {/* Image FULL */}
                         <Image
