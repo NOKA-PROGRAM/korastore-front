@@ -90,7 +90,7 @@ export default function Header() {
                             className="fixed inset-0 md:hidden z-40 bg-white flex flex-col overflow-y-auto"
                         >
                             {/* Header with Logo and Close Button */}
-                            <div className="flex items-center justify-between px-4 py-4 sticky top-0 bg-white border-b border-gray-200">
+                            <div className="flex items-center justify-between pl-8 pr-4 py-4 sticky top-0 bg-white">
                                 <Link
                                     href="/"
                                     onClick={() => setMenuOpen(false)}
@@ -128,7 +128,7 @@ export default function Header() {
                                         <div className="w-10 h-10 rounded-[10px] bg-[#FB8500] flex items-center justify-center shrink-0 shadow-sm">
                                             <Home className="w-5 h-5 text-white" />
                                         </div>
-                                        ACCUEIL
+                                        Accueil
                                     </Link>
 
                                     {/* BOUTIQUE - Accordion */}
@@ -139,7 +139,7 @@ export default function Header() {
                                                     <div className="w-10 h-10 rounded-[10px] bg-[#FB8500] flex items-center justify-center shrink-0 shadow-sm">
                                                         <Store className="w-5 h-5 text-white" />
                                                     </div>
-                                                    BOUTIQUE
+                                                    Boutique
                                                 </div>
                                                 <ChevronDown className="w-5 h-5 text-orange-500 shrink-0 transition-transform duration-200" />
                                             </AccordionPrimitive.Trigger>
@@ -168,7 +168,7 @@ export default function Header() {
                                                     <div className="w-10 h-10 rounded-[10px] bg-[#FB8500] flex items-center justify-center shrink-0 shadow-sm">
                                                         <HelpCircle className="w-5 h-5 text-white" />
                                                     </div>
-                                                    AIDE
+                                                    Aide
                                                 </div>
                                                 <ChevronDown className="w-5 h-5 text-orange-500 shrink-0 transition-transform duration-200" />
                                             </AccordionPrimitive.Trigger>
@@ -214,7 +214,7 @@ export default function Header() {
             {/* ─────────────────────────────────────────────────────────────
           DESKTOP HEADER  (visible à partir de md)
       ───────────────────────────────────────────────────────────── */}
-            <div className="hidden md:flex items-center justify-between bg-white border-b border-gray-100 px-6 lg:px-10 xl:px-16 h-20 gap-6 w-full mx-auto relative">
+            <div className="hidden md:flex items-center justify-between bg-white border-b border-gray-100 px-4 lg:px-4 xl:px-7 h-20 gap-6 w-full mx-auto relative">
                 {/* Logo */}
                 <Link
                     href="/"
