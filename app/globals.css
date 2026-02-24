@@ -5,18 +5,31 @@
     --font-body: var(--font-inter), ui-sans-serif, system-ui;
 }
 
-html {
-    overflow-x: hidden;
-}
-
+/* ── CSS Variables for header height management ── */
 :root {
     --font-sans: var(--font-inter);
+    --top-banner-height: 52px;
+    --header-mobile-height: 104px;
+    --header-desktop-height: 80px;
+    --total-header-mobile: calc(var(--top-banner-height) + var(--header-mobile-height));
+    --total-header-desktop: calc(var(--top-banner-height) + var(--header-desktop-height));
+}
+
+/* ── Base Resets ── */
+html {
+    overflow-x: hidden;
+    scroll-behavior: smooth;
+    /* iOS: prevent text size adjustment on orientation change */
+    -webkit-text-size-adjust: 100%;
+    text-size-adjust: 100%;
 }
 
 body {
     font-family: var(--font-inter);
     overflow-x: hidden;
     width: 100%;
+    /* Safari: disable tap highlight */
+    -webkit-tap-highlight-color: transparent;
 }
 
 h1,
@@ -26,4 +39,42 @@ h4,
 h5,
 h6 {
     font-family: var(--font-poppins);
+}
+
+/* ── Scrollbar Hide for horizontal carousels (all browsers) ── */
+.scrollbar-hide {
+    -ms-overflow-style: none;
+    /* IE / Edge */
+    scrollbar-width: none;
+    /* Firefox */
+}
+
+.scrollbar-hide::-webkit-scrollbar {
+    display: none;
+    /* Chrome / Safari / Opera */
+}
+
+/* ── iOS Safe Area padding (for notch devices) ── */
+@supports (padding: env(safe-area-inset-bottom)) {
+    .safe-area-bottom {
+        padding-bottom: env(safe-area-inset-bottom);
+    }
+}
+
+/* ── Smooth momentum scrolling for iOS ── */
+.overflow-x-auto {
+    -webkit-overflow-scrolling: touch;
+}
+
+/* ── Fix for Safari backdrop-filter ── */
+@supports (-webkit-backdrop-filter: blur(1px)) {
+    .backdrop-blur-sm {
+        -webkit-backdrop-filter: blur(4px);
+        backdrop-filter: blur(4px);
+    }
+
+    .backdrop-blur-md {
+        -webkit-backdrop-filter: blur(12px);
+        backdrop-filter: blur(12px);
+    }
 }

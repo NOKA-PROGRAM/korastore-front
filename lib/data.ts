@@ -50,6 +50,36 @@ export const categories: Category[] = [
         id: '10',
         name: 'Bureau & Productivité',
         imageUrl: 'https://images.pexels.com/photos/4064835/pexels-photo-4064835.jpeg'
+    },
+    {
+        id: '11',
+        name: 'Mode, chaussures & Design',
+        imageUrl: 'https://images.pexels.com/photos/14409995/pexels-photo-14409995.jpeg'
+    },
+    {
+        id: '12',
+        name: 'Bébé, enfants & jouets',
+        imageUrl: 'https://images.pexels.com/photos/961188/pexels-photo-961188.jpeg'
+    },
+    {
+        id: '13',
+        name: 'Epicerie & Alimentation',
+        imageUrl: 'https://images.pexels.com/photos/142520/pexels-photo-142520.jpeg'
+    },
+    {
+        id: '14',
+        name: 'Sport & Plein air',
+        imageUrl: 'https://images.pexels.com/photos/2180755/pexels-photo-2180755.jpeg'
+    },
+    {
+        id: '15',
+        name: 'Auto & Moto',
+        imageUrl: 'https://images.pexels.com/photos/30092956/pexels-photo-30092956.jpeg'
+    },
+    {
+        id: '16',
+        name: 'Bureau & Productivité',
+        imageUrl: 'https://images.pexels.com/photos/4064835/pexels-photo-4064835.jpeg'
     }
 ];
 

@@ -25,7 +25,7 @@ export default function PopularProducts() {
             </div>
 
             {/* Scroll Container */}
-            <div className="overflow-x-auto scrollbar-hide">
+            <div className="overflow-x-auto scrollbar-hide overscroll-x-contain">
                 <div
                     className="
                         flex gap-4

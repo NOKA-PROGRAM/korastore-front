@@ -24,7 +24,7 @@ export default function PromoSection() {
             </div>
 
             {/* Scroll Container */}
-            <div className="overflow-x-auto scrollbar-hide">
+            <div className="overflow-x-auto scrollbar-hide overscroll-x-contain">
                 <div className="
                     flex gap-4
                     px-4 lg:px-8

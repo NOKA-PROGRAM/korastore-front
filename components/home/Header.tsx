@@ -36,7 +36,7 @@ export default function Header() {
     const [megaMenuOpen, setMegaMenuOpen] = useState<string | null>(null);
 
     return (
-        <header className="w-full sticky top-0 z-40">
+        <header className="w-full">
             {/* MOBILE HEADER */}
             <div className="md:hidden bg-[#FB8500] px-4 pt-3 pb-4">
                 {/* Row 1 : Icons — Logo — Cart */}
