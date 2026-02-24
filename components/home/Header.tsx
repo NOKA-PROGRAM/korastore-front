@@ -2,7 +2,7 @@
 
 import React, { useState } from 'react';
 import Link from 'next/link';
-import { User, ShoppingCart, Search, Menu, X, ChevronDown, MessageCircle } from 'lucide-react';
+import { User, ShoppingCart, Search, Menu, X, ChevronDown, MessageCircle, Home, Store, HelpCircle } from 'lucide-react';
 import * as AccordionPrimitive from '@radix-ui/react-accordion';
 
 const navLinks = [
@@ -123,8 +123,11 @@ export default function Header() {
                                     <Link
                                         href="/"
                                         onClick={() => setMenuOpen(false)}
-                                        className="block text-gray-900 font-bold text-lg py-3 px-3 hover:bg-gray-100 rounded-lg transition-colors"
+                                        className="flex items-center gap-3 text-gray-900 font-bold text-lg py-3 px-3 hover:bg-gray-100 rounded-lg transition-colors"
                                     >
+                                        <div className="w-10 h-10 rounded-[10px] bg-orange-500 flex items-center justify-center shrink-0 shadow-sm">
+                                            <Home className="w-5 h-5 text-white" />
+                                        </div>
                                         ACCUEIL
                                     </Link>
 
@@ -132,12 +135,17 @@ export default function Header() {
                                     <AccordionPrimitive.Item value="boutique" className="border-0">
                                         <AccordionPrimitive.Header className="flex">
                                             <AccordionPrimitive.Trigger className="flex flex-1 items-center justify-between text-gray-900 font-bold text-lg py-3 px-3 hover:bg-gray-100 rounded-lg transition-colors [&[data-state=open]>svg]:rotate-180">
-                                                BOUTIQUE
+                                                <div className="flex items-center gap-3">
+                                                    <div className="w-10 h-10 rounded-[10px] bg-orange-500 flex items-center justify-center shrink-0 shadow-sm">
+                                                        <Store className="w-5 h-5 text-white" />
+                                                    </div>
+                                                    BOUTIQUE
+                                                </div>
                                                 <ChevronDown className="w-5 h-5 text-orange-500 shrink-0 transition-transform duration-200" />
                                             </AccordionPrimitive.Trigger>
                                         </AccordionPrimitive.Header>
                                         <AccordionPrimitive.Content className="pb-0">
-                                            <div className="space-y-1 pl-6 pb-3">
+                                            <div className="space-y-1 pl-[52px] pb-3">
                                                 {shopItems.map((item) => (
                                                     <Link
                                                         key={item.href}
@@ -156,12 +164,17 @@ export default function Header() {
                                     <AccordionPrimitive.Item value="aide" className="border-0">
                                         <AccordionPrimitive.Header className="flex">
                                             <AccordionPrimitive.Trigger className="flex flex-1 items-center justify-between text-gray-900 font-bold text-lg py-3 px-3 hover:bg-gray-100 rounded-lg transition-colors [&[data-state=open]>svg]:rotate-180">
-                                                AIDE
+                                                <div className="flex items-center gap-3">
+                                                    <div className="w-10 h-10 rounded-[10px] bg-orange-500 flex items-center justify-center shrink-0 shadow-sm">
+                                                        <HelpCircle className="w-5 h-5 text-white" />
+                                                    </div>
+                                                    AIDE
+                                                </div>
                                                 <ChevronDown className="w-5 h-5 text-orange-500 shrink-0 transition-transform duration-200" />
                                             </AccordionPrimitive.Trigger>
                                         </AccordionPrimitive.Header>
                                         <AccordionPrimitive.Content className="pb-0">
-                                            <div className="space-y-1 pl-6 pb-3">
+                                            <div className="space-y-1 pl-[52px] pb-3">
                                                 {helpItems.map((item) => (
                                                     <Link
                                                         key={item.href}
