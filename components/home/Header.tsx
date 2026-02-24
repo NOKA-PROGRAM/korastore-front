@@ -125,7 +125,7 @@ export default function Header() {
                                         onClick={() => setMenuOpen(false)}
                                         className="flex items-center gap-3 text-gray-900 font-bold text-lg py-3 px-3 hover:bg-gray-100 rounded-lg transition-colors"
                                     >
-                                        <div className="w-10 h-10 rounded-[10px] bg-orange-500 flex items-center justify-center shrink-0 shadow-sm">
+                                        <div className="w-10 h-10 rounded-[10px] bg-[#FB8500] flex items-center justify-center shrink-0 shadow-sm">
                                             <Home className="w-5 h-5 text-white" />
                                         </div>
                                         ACCUEIL
@@ -136,7 +136,7 @@ export default function Header() {
                                         <AccordionPrimitive.Header className="flex">
                                             <AccordionPrimitive.Trigger className="flex flex-1 items-center justify-between text-gray-900 font-bold text-lg py-3 px-3 hover:bg-gray-100 rounded-lg transition-colors [&[data-state=open]>svg]:rotate-180">
                                                 <div className="flex items-center gap-3">
-                                                    <div className="w-10 h-10 rounded-[10px] bg-orange-500 flex items-center justify-center shrink-0 shadow-sm">
+                                                    <div className="w-10 h-10 rounded-[10px] bg-[#FB8500] flex items-center justify-center shrink-0 shadow-sm">
                                                         <Store className="w-5 h-5 text-white" />
                                                     </div>
                                                     BOUTIQUE
@@ -165,7 +165,7 @@ export default function Header() {
                                         <AccordionPrimitive.Header className="flex">
                                             <AccordionPrimitive.Trigger className="flex flex-1 items-center justify-between text-gray-900 font-bold text-lg py-3 px-3 hover:bg-gray-100 rounded-lg transition-colors [&[data-state=open]>svg]:rotate-180">
                                                 <div className="flex items-center gap-3">
-                                                    <div className="w-10 h-10 rounded-[10px] bg-orange-500 flex items-center justify-center shrink-0 shadow-sm">
+                                                    <div className="w-10 h-10 rounded-[10px] bg-[#FB8500] flex items-center justify-center shrink-0 shadow-sm">
                                                         <HelpCircle className="w-5 h-5 text-white" />
                                                     </div>
                                                     AIDE
