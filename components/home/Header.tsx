@@ -70,7 +70,7 @@ export default function Header() {
                     <input
                         type="search"
                         placeholder="Rechercher..."
-                        className="bg-transparent w-full text-sm outline-none placeholder-gray-500 text-gray-800"
+                        className="bg-transparent w-full text-base outline-none placeholder-gray-500 text-gray-800"
                     />
                 </div>
 
@@ -216,7 +216,7 @@ export default function Header() {
                     <input
                         type="search"
                         placeholder="Rechercher..."
-                        className="bg-transparent w-full text-sm outline-none placeholder-gray-400 text-gray-800"
+                        className="bg-transparent w-full text-base md:text-sm outline-none placeholder-gray-400 text-gray-800"
                     />
                 </div>
 
