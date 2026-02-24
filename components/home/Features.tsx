@@ -3,7 +3,7 @@ import { Truck, CreditCard, RotateCcw } from 'lucide-react';
 
 export default function Features() {
     return (
-        <section className="px-4 py-8 md:py-12 lg:px-8 space-y-8 md:space-y-0 md:flex md:justify-around md:items-center bg-white w-full max-w-7xl mx-auto">
+        <section className="px-4 py-4 md:py-8 lg:px-8 space-y-8 md:space-y-0 md:flex md:justify-around md:items-center bg-white w-full max-w-7xl mx-auto">
             <div className="flex items-center gap-4 group">
                 <div className="w-14 h-14 md:w-16 md:h-16 rounded-full bg-white border border-gray-100 shadow-[0_2px_8px_rgba(0,0,0,0.06)] flex items-center justify-center shrink-0 group-hover:scale-105 transition-transform duration-300">
                     <Truck className="text-[#FB8500] w-6 h-6 md:w-7 md:h-7" strokeWidth={2} />

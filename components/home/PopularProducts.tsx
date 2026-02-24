@@ -10,7 +10,7 @@ export default function PopularProducts() {
 
             {/* Header */}
             <div className="max-w-7xl mx-auto px-4 lg:px-8">
-                <div className="flex justify-between items-center mb-6">
+                <div className="flex justify-between items-center mb-4">
                     <h2 className="text-lg md:text-3xl font-extrabold text-gray-900 tracking-tight">
                         Produits populaires
                     </h2>

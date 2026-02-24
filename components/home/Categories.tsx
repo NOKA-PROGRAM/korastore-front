@@ -9,17 +9,10 @@ export default function ShopByCategory() {
         <section className="w-full bg-white">
             <div className="max-w-7xl mx-auto px-4 py-10 md:py-14">
 
-                <div className="flex justify-between items-center mb-6 md:mb-10">
+                <div className="flex justify-between items-center mb-4 md:mb-10">
                     <h2 className="text-xl md:text-3xl font-bold text-gray-900">
                         Catégories
                     </h2>
-                    <Link
-                        href="/categories"
-                        className="text-sm md:text-base text-[#FB8500] font-bold flex items-center hover:text-[#FB8500] transition-colors"
-                    >
-                        Tout voir
-                        <ChevronRight className="w-4 h-4 ml-1 md:w-5 md:h-5" />
-                    </Link>
                 </div>
 
                 {/* GRID */}

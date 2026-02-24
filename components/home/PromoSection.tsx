@@ -9,7 +9,7 @@ export default function PromoSection() {
 
             {/* Header */}
             <div className="max-w-7xl mx-auto px-4 lg:px-8">
-                <div className="flex justify-between items-center mb-6">
+                <div className="flex justify-between items-center mb-4">
                     <h2 className="text-xl md:text-3xl font-extrabold text-gray-900">
                         Les Bons Plans
                     </h2>
