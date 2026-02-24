@@ -1,8 +1,7 @@
 import type { Metadata } from 'next';
 import { Inter, Poppins } from 'next/font/google';
 import './globals.css';
-import TopBanner from '@/components/home/TopBanner';
-import Header from '@/components/home/Header';
+import FixedHeader from '@/components/home/FixedHeader';
 
 const inter = Inter({
   subsets: ['latin'],
@@ -40,15 +39,10 @@ export default function RootLayout({
   return (
     <html lang="fr" className={`${inter.variable} ${poppins.variable} overflow-x-hidden`}>
       <body className="antialiased bg-white text-gray-800 font-body overflow-x-hidden w-full">
-        {/* Fixed top-bar: promo banner + header */}
-        <div className="fixed top-0 left-0 right-0 z-40 w-full font-title">
-          <TopBanner />
-          <Header />
-        </div>
-        {/* Spacer to compensate for fixed header height */}
-        <div className="h-[156px] md:h-[132px]" />
+        <FixedHeader />
         {children}
       </body>
     </html>
   );
 }
+
