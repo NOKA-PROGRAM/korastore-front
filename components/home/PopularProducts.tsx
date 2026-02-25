@@ -109,6 +109,9 @@ export default function PopularProducts() {
                             </div>
                         </div>
                     ))}
+
+                    {/* Spacer pour la marge droite en scroll horizontal mobile */}
+                    <div className="shrink-0 w-1 md:hidden" aria-hidden="true" />
                 </div>
             </div>
         </section>

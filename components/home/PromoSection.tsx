@@ -34,17 +34,16 @@ export default function PromoSection() {
                     max-w-7xl mx-auto
                 ">
 
-                    {/* Card */}
-                    {[1, 2, 3].map((item) => (
+                    {[1, 2, 3, 4, 5, 6, 7].map((item) => (
                         <div
                             key={item}
                             className="relative w-[288px] md:w-full shrink-0 h-[438px] md:h-[500px] lg:h-[560px] rounded-2xl overflow-hidden snap-start shadow-lg hover:shadow-xl transition-shadow"
                         >
                             <Image
                                 src={
-                                    item === 1
+                                    item % 3 === 1
                                         ? "https://images.pexels.com/photos/3756858/pexels-photo-3756858.jpeg"
-                                        : item === 2
+                                        : item % 3 === 2
                                             ? "https://images.pexels.com/photos/20053658/pexels-photo-20053658.jpeg"
                                             : "https://images.pexels.com/photos/29675494/pexels-photo-29675494.jpeg"
                                 }
@@ -68,6 +67,9 @@ export default function PromoSection() {
                             </div>
                         </div>
                     ))}
+
+                    {/* Spacer pour marge droite en mobile */}
+                    <div className="shrink-0 w-1 md:hidden" aria-hidden="true" />
 
                 </div>
             </div>
