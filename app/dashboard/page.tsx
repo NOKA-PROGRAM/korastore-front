@@ -9,6 +9,7 @@ import FormulaCard from "@/components/dashboard/FormulaCard";
 import ActivityChart from "@/components/dashboard/ActivityChart";
 import Footer from "@/components/dashboard/Footer";
 import ScrollTopButton from "@/components/dashboard/ScrollTopButton";
+import BackToTop from "@/components/home/BackToTop";
 import { X } from "lucide-react";
 import Link from "next/link";
 
@@ -21,13 +22,13 @@ export default function Dashboard() {
 
     return (
         /* Conteneur racine : hauteur écran fixe, overflow hidden pour empêcher le body de scroller */
-        <div className="h-screen overflow-hidden bg-gray-50 flex flex-col">
+        <div className="h-screen overflow-hidden bg-white flex flex-col">
 
             {/* HEADER — pleine largeur, fixe en haut */}
             <Header isSidebarOpen={isSidebarOpen} onToggleSidebar={toggleSidebar} />
 
-            {/* ZONE SOUS LE HEADER : sidebar + contenu */}
-            <div className="flex flex-1 overflow-hidden relative">
+            {/* ZONE de scroll globale en dessous du header (inclut la sidebar flex, le contenu, puis le footer en bas) */}
+            <div id="dashboard-scroll-area" className="flex-1 overflow-y-auto bg-white flex flex-col relative w-full">
 
                 {/* MOBILE SIDEBAR MODAL (Matches Homepage Design) */}
                 {isSidebarOpen && (
@@ -70,14 +71,18 @@ export default function Dashboard() {
                     </>
                 )}
 
-                {/* SIDEBAR FIXE — desktop uniquement */}
-                <aside className="hidden lg:flex flex-shrink-0 h-full overflow-y-auto border-r border-[#fff7ed]">
-                    <Sidebar />
-                </aside>
+                {/* Wrapper sidebar stiky + contenu principal */}
+                <div className="flex flex-1 w-full">
 
-                {/* CONTENU PRINCIPAL SCROLLABLE */}
-                <div className="flex-1 flex flex-col overflow-y-auto min-w-0">
-                    <main className="px-5 py-6 lg:px-10 lg:py-8 flex flex-col gap-8 flex-1">
+                    {/* SIDEBAR FIXE — desktop uniquement */}
+                    <aside className="hidden lg:block w-64 flex-shrink-0">
+                        <div className="sticky top-0 h-[calc(100vh-64px)] overflow-y-auto border-r border-[#fff7ed]">
+                            <Sidebar />
+                        </div>
+                    </aside>
+
+                    {/* CONTENU PRINCIPAL SCROLLABLE (fait monter le footer) */}
+                    <main className="flex-1 px-5 py-6 lg:px-10 lg:py-8 flex flex-col gap-8 min-w-0">
 
                         {/* Filtres */}
                         <Filters />
@@ -117,15 +122,19 @@ export default function Dashboard() {
 
                         {/* Graphique */}
                         <ActivityChart />
-                    </main>
 
-                    {/* FOOTER — pleine largeur dans la zone scrollable */}
-                    <Footer />
+                        {/* Back To Top */}
+                        <div className="mt-2 -mx-5 lg:-mx-10 bg-transparent flex justify-center">
+                            <BackToTop />
+                        </div>
+                    </main>
                 </div>
+
+                {/* FOOTER — pleine largeur sous la sidebar et le contenu */}
+                <Footer />
             </div>
 
             {/* Bouton retour en haut */}
-            <ScrollTopButton />
         </div>
     );
 }

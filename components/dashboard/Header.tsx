@@ -23,7 +23,7 @@ export default function DashboardHeader({ isSidebarOpen, onToggleSidebar }: Head
             <div
                 className="text-white font-extrabold text-2xl tracking-tight absolute left-1/2 -translate-x-1/2 lg:static lg:translate-x-0 font-title"
             >
-                korastore
+                <Link href="/">korastore</Link>
             </div>
 
             {/* Bouton retour vers l'accueil */}

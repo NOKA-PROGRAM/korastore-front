@@ -60,31 +60,32 @@ export default function ActivityChart() {
 
     return (
         <div
-            className="bg-white rounded-xl shadow-sm p-6 flex flex-col gap-5"
-            style={{ border: "1px solid #fff7ed" }}
+            className="bg-white rounded-xl shadow-sm p-4 sm:p-6 flex flex-col gap-6 sm:gap-8"
+            style={{ border: "1px solid #f3f4f6" }}
         >
             {/* Titre + onglets */}
-            <div className="flex items-center justify-between flex-wrap gap-3">
-                <h3 className="font-semibold text-gray-800">Activité du site en 24h</h3>
+            <div className="flex items-start sm:items-center justify-between sm:justify-start gap-4">
+                <h3 className="font-bold text-gray-900 text-sm sm:text-base leading-snug w-1/2 sm:w-auto">
+                    Activité du site <br className="sm:hidden" />en 24h
+                </h3>
                 <div
-                    className="flex rounded-lg overflow-hidden border"
-                    style={{ borderColor: "#fff7ed" }}
+                    className="flex rounded-md overflow-hidden border"
+                    style={{ borderColor: "#e5e7eb" }}
                 >
                     <button
                         onClick={() => setActiveTab("today")}
-                        className={`px-4 py-1.5 text-xs font-medium transition-colors border-r ${activeTab === "today"
-                            ? "bg-white text-orange-600 border-orange-500 z-10"
-                            : "bg-white text-gray-600 hover:bg-orange-50 border-transparent"
+                        className={`px-3 py-1 sm:px-4 sm:py-1.5 text-xs font-medium transition-colors border-r border-gray-200 ${activeTab === "today"
+                            ? "bg-white text-gray-900 shadow-sm z-10"
+                            : "bg-gray-50/50 text-gray-500 hover:bg-gray-50"
                             }`}
-                        style={activeTab === "today" ? { borderRightWidth: "1px", borderLeftWidth: "1px", borderTopWidth: "1px", borderBottomWidth: "1px" } : {}}
                     >
                         Aujourd&apos;hui
                     </button>
                     <button
                         onClick={() => setActiveTab("compare")}
-                        className={`px-4 py-1.5 text-xs font-medium transition-colors ${activeTab === "compare"
-                            ? "bg-white text-orange-600 border border-orange-500 z-10"
-                            : "bg-white text-gray-600 hover:bg-orange-50 border-transparent"
+                        className={`px-3 py-1 sm:px-4 sm:py-1.5 text-xs font-medium transition-colors ${activeTab === "compare"
+                            ? "bg-white text-gray-900 shadow-sm z-10"
+                            : "bg-gray-50/50 text-gray-500 hover:bg-gray-50"
                             }`}
                     >
                         Comparer
@@ -93,25 +94,42 @@ export default function ActivityChart() {
             </div>
 
             {/* Mini-stats */}
-            <div className="grid grid-cols-2 sm:grid-cols-4 gap-4">
+            <div className="grid grid-cols-2 gap-y-6 gap-x-4 sm:gap-y-8 sm:gap-x-12">
                 <div>
-                    <p className="text-xs text-gray-400 mb-0.5">Sessions</p>
-                    <p className="text-xl font-bold text-gray-800">{totalSessions.toLocaleString()}</p>
-                    <p className="text-xs text-emerald-500 font-medium mt-0.5">+10%</p>
+                    <p className="text-xs text-gray-500 mb-1.5">Sessions</p>
+                    <div className="flex items-baseline gap-2 flex-wrap">
+                        <p className="text-lg sm:text-xl font-bold text-gray-900">{totalSessions.toLocaleString()}</p>
+                        <p className="text-[10px] sm:text-xs text-emerald-500 font-medium flex items-center">
+                            <svg className="w-3 h-3 mr-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6" /></svg>
+                            10%
+                        </p>
+                    </div>
                 </div>
                 <div>
-                    <p className="text-xs text-gray-400 mb-0.5">Ventes totales</p>
-                    <p className="text-xl font-bold text-gray-800">{formatCFA(totalCA)} FCFA</p>
-                    <p className="text-xs text-emerald-500 font-medium mt-0.5">+3.11%</p>
+                    <p className="text-xs text-gray-500 mb-1.5">Ventes totales</p>
+                    <div className="flex items-baseline gap-2 flex-wrap">
+                        <p className="text-lg sm:text-xl font-bold text-gray-900">{formatCFA(totalCA)} FCFA</p>
+                        <p className="text-[10px] sm:text-xs text-emerald-500 font-medium flex items-center">
+                            <svg className="w-3 h-3 mr-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6" /></svg>
+                            3.33%
+                        </p>
+                    </div>
                 </div>
                 <div>
-                    <p className="text-xs text-gray-400 mb-0.5">Commandes</p>
-                    <p className="text-xl font-bold text-gray-800">{totalCommandes}</p>
-                    <p className="text-xs text-emerald-500 font-medium mt-0.5">+28%</p>
+                    <p className="text-xs text-gray-500 mb-1.5">Commandes</p>
+                    <div className="flex items-baseline gap-2 flex-wrap">
+                        <p className="text-lg sm:text-xl font-bold text-gray-900">{totalCommandes}</p>
+                        <p className="text-[10px] sm:text-xs text-emerald-500 font-medium flex items-center">
+                            <svg className="w-3 h-3 mr-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6" /></svg>
+                            25%
+                        </p>
+                    </div>
                 </div>
                 <div>
-                    <p className="text-xs text-gray-400 mb-0.5">Taux de conversion</p>
-                    <p className="text-xl font-bold text-gray-800">{tauxConv}%</p>
+                    <p className="text-xs text-gray-500 mb-1.5">Taux de conversion</p>
+                    <div className="flex items-baseline gap-2 flex-wrap">
+                        <p className="text-lg sm:text-xl font-bold text-gray-900">{tauxConv}%</p>
+                    </div>
                 </div>
             </div>
 

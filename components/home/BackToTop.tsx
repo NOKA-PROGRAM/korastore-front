@@ -4,8 +4,13 @@ import React from 'react';
 import { ChevronUp } from 'lucide-react';
 
 export default function BackToTop() {
-  const scrollToTop = () =>
+  const scrollToTop = () => {
     window.scrollTo({ top: 0, behavior: 'smooth' });
+    const dashScroll = document.getElementById('dashboard-scroll-area');
+    if (dashScroll) {
+      dashScroll.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+  };
 
   return (
     <div className="flex justify-center py-6 bg-white">
