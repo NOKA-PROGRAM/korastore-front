@@ -18,7 +18,7 @@ export default function StatCard({
     return (
         <div
             className="bg-white rounded-xl shadow-sm p-5 flex flex-col gap-3"
-            style={{ border: "1px solid #fed7aa" }}
+            style={{ border: "1px solid #fff7ed" }}
         >
             <div className="flex items-start justify-between">
                 <h3 className="text-sm font-medium text-gray-500">{title}</h3>

@@ -64,9 +64,9 @@ export default function Sidebar({ onNavigate }: SidebarProps) {
                             key={href}
                             href={href}
                             onClick={onNavigate}
-                            className={`flex items-center gap-3 px-4 py-3 rounded-xl text-sm font-medium transition-all ${isActive
-                                ? "bg-orange-500 text-white shadow-md"
-                                : "text-gray-700 hover:bg-orange-50 hover:text-orange-600"
+                            className={`flex items-center gap-3 px-4 py-3 rounded-xl text-sm font-medium transition-all border-2 ${isActive
+                                ? "border-orange-500 text-orange-600 bg-white shadow-sm"
+                                : "border-transparent text-gray-700 hover:bg-orange-50 hover:text-orange-600"
                                 }`}
                         >
 
@@ -75,7 +75,7 @@ export default function Sidebar({ onNavigate }: SidebarProps) {
                             {badge !== null && (
                                 <span
                                     className={`text-xs font-bold px-2 py-0.5 rounded-full ${isActive
-                                        ? "bg-white text-orange-500"
+                                        ? "bg-orange-500 text-white"
                                         : "bg-orange-500 text-white"
                                         }`}
                                 >

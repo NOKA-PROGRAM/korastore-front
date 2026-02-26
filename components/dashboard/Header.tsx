@@ -29,10 +29,9 @@ export default function DashboardHeader({ isSidebarOpen, onToggleSidebar }: Head
             {/* Bouton retour vers l'accueil */}
             <Link
                 href="/"
-                className="flex items-center gap-2 bg-white/20 hover:bg-white/30 transition-colors px-3 md:px-4 py-2 rounded-lg text-sm font-medium z-50"
+                className="flex items-center gap-2 px-3 md:px-4 py-2 rounded-lg text-sm font-medium z-50"
             >
                 <ArrowLeft size={16} />
-                <span className="hidden sm:inline">Retour</span>
             </Link>
         </header>
     );

@@ -71,7 +71,7 @@ export default function Dashboard() {
                 )}
 
                 {/* SIDEBAR FIXE — desktop uniquement */}
-                <aside className="hidden lg:flex flex-shrink-0 h-full overflow-y-auto border-r border-orange-200">
+                <aside className="hidden lg:flex flex-shrink-0 h-full overflow-y-auto border-r border-[#fff7ed]">
                     <Sidebar />
                 </aside>
 

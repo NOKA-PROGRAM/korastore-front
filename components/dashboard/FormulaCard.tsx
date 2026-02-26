@@ -2,7 +2,7 @@ export default function FormulaCard() {
     return (
         <div
             className="bg-white rounded-xl shadow-sm p-6 flex flex-col gap-5"
-            style={{ border: "1px solid #fed7aa" }}
+            style={{ border: "1px solid #fff7ed" }}
         >
             <h3 className="font-semibold text-gray-800">
                 Formule du Taux de Conversion
@@ -30,7 +30,7 @@ export default function FormulaCard() {
                 <p className="text-xs text-gray-500 font-medium mb-2">Exemple de calcul :</p>
                 <div
                     className="rounded-lg p-4 text-sm flex flex-col gap-1.5"
-                    style={{ backgroundColor: "#fff7ed", border: "1px solid #fed7aa" }}
+                    style={{ backgroundColor: "#fff7ed", border: "1px solid #fff7ed" }}
                 >
                     <p className="text-gray-700">
                         • Nombre de commandes : <strong>342</strong>

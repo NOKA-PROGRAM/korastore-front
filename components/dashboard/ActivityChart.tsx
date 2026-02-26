@@ -61,29 +61,30 @@ export default function ActivityChart() {
     return (
         <div
             className="bg-white rounded-xl shadow-sm p-6 flex flex-col gap-5"
-            style={{ border: "1px solid #fed7aa" }}
+            style={{ border: "1px solid #fff7ed" }}
         >
             {/* Titre + onglets */}
             <div className="flex items-center justify-between flex-wrap gap-3">
                 <h3 className="font-semibold text-gray-800">Activité du site en 24h</h3>
                 <div
-                    className="flex rounded-lg overflow-hidden"
-                    style={{ border: "1px solid #fed7aa" }}
+                    className="flex rounded-lg overflow-hidden border"
+                    style={{ borderColor: "#fff7ed" }}
                 >
                     <button
                         onClick={() => setActiveTab("today")}
-                        className={`px-4 py-1.5 text-xs font-medium transition-colors ${activeTab === "today"
-                            ? "bg-orange-500 text-white"
-                            : "bg-white text-gray-600 hover:bg-orange-50"
+                        className={`px-4 py-1.5 text-xs font-medium transition-colors border-r ${activeTab === "today"
+                            ? "bg-white text-orange-600 border-orange-500 z-10"
+                            : "bg-white text-gray-600 hover:bg-orange-50 border-transparent"
                             }`}
+                        style={activeTab === "today" ? { borderRightWidth: "1px", borderLeftWidth: "1px", borderTopWidth: "1px", borderBottomWidth: "1px" } : {}}
                     >
                         Aujourd&apos;hui
                     </button>
                     <button
                         onClick={() => setActiveTab("compare")}
                         className={`px-4 py-1.5 text-xs font-medium transition-colors ${activeTab === "compare"
-                            ? "bg-orange-500 text-white"
-                            : "bg-white text-gray-600 hover:bg-orange-50"
+                            ? "bg-white text-orange-600 border border-orange-500 z-10"
+                            : "bg-white text-gray-600 hover:bg-orange-50 border-transparent"
                             }`}
                     >
                         Comparer
@@ -139,10 +140,10 @@ export default function ActivityChart() {
                         <Tooltip
                             contentStyle={{
                                 borderRadius: "8px",
-                                border: "1px solid #fed7aa",
+                                border: "1px solid #fff7ed",
                                 fontSize: "12px",
                             }}
-                            formatter={(value: number) => [value, "Visiteurs"]}
+                            formatter={(value: any) => [value, "Visiteurs"]}
                         />
                         <Area
                             type="monotone"
