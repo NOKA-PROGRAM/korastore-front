@@ -7,7 +7,7 @@ import { categories } from '@/lib/data';
 export default function ShopByCategory() {
     return (
         <section className="w-full bg-white">
-            <div className="max-w-7xl mx-auto px-4 py-10 md:py-14">
+            <div className="max-w-7xl mx-auto px-4 py-10 md:py-10">
 
                 <div className="flex justify-between items-center mb-4 md:mb-10">
                     <h2 className="text-xl md:text-3xl font-bold text-gray-900">

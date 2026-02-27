@@ -26,18 +26,16 @@ export default function PromoSection() {
             {/* Scroll Container */}
             <div className="overflow-x-auto scrollbar-hide overscroll-x-contain">
                 <div className="
-                    flex gap-4
+                    flex gap-4 md:gap-6
                     px-4 lg:px-8
                     snap-x snap-mandatory
-                    md:grid md:grid-cols-2 lg:grid-cols-3
-                    md:gap-6 md:px-0
                     max-w-7xl mx-auto
                 ">
 
                     {[1, 2, 3, 4, 5, 6, 7].map((item) => (
                         <div
                             key={item}
-                            className="relative w-[288px] md:w-full shrink-0 h-[438px] md:h-[500px] lg:h-[560px] rounded-2xl overflow-hidden snap-start shadow-lg hover:shadow-xl transition-shadow"
+                            className="relative w-[288px] md:w-[400px] lg:w-[450px] shrink-0 h-[438px] md:h-[500px] lg:h-[560px] rounded-2xl overflow-hidden snap-start shadow-lg hover:shadow-xl transition-shadow"
                         >
                             <Image
                                 src={
@@ -69,7 +67,7 @@ export default function PromoSection() {
                     ))}
 
                     {/* Spacer pour marge droite en mobile */}
-                    <div className="shrink-0 w-1 md:hidden" aria-hidden="true" />
+                    <div className="shrink-0 w-1 lg:w-4" aria-hidden="true" />
 
                 </div>
             </div>

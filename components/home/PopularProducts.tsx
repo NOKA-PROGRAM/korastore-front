@@ -28,11 +28,9 @@ export default function PopularProducts() {
             <div className="overflow-x-auto scrollbar-hide overscroll-x-contain">
                 <div
                     className="
-                        flex gap-4
+                        flex gap-4 md:gap-6
                         px-4 lg:px-8
                         snap-x snap-mandatory
-                        md:grid md:grid-cols-4 lg:grid-cols-5
-                        md:gap-6 md:px-0
                         max-w-7xl mx-auto
                     "
                 >
@@ -40,7 +38,7 @@ export default function PopularProducts() {
                         <div
                             key={prod.id}
                             className="
-    w-[170px] sm:w-[190px] md:w-auto
+    w-[170px] sm:w-[190px] md:w-[220px] lg:w-[230px]
     shrink-0 snap-start
     rounded-2xl p-3
     bg-gradient-to-b from-[#FB8500]/90 via-[#FFE2BD] to-white
@@ -111,7 +109,7 @@ export default function PopularProducts() {
                     ))}
 
                     {/* Spacer pour la marge droite en scroll horizontal mobile */}
-                    <div className="shrink-0 w-1 md:hidden" aria-hidden="true" />
+                    <div className="shrink-0 w-1 lg:w-4" aria-hidden="true" />
                 </div>
             </div>
         </section>

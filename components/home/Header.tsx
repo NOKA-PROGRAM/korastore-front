@@ -1,6 +1,6 @@
 'use client';
 
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import Link from 'next/link';
 import { User, ShoppingCart, Search, Menu, X, ChevronDown, MessageCircle, Home, Store, HelpCircle } from 'lucide-react';
 import * as AccordionPrimitive from '@radix-ui/react-accordion';
@@ -34,6 +34,21 @@ const helpItems = [
 export default function Header() {
     const [menuOpen, setMenuOpen] = useState(false);
     const [megaMenuOpen, setMegaMenuOpen] = useState<string | null>(null);
+
+    // Freeze body scroll when mobile menu is open
+    useEffect(() => {
+        if (menuOpen) {
+            document.body.style.overflow = 'hidden';
+            document.body.style.overscrollBehavior = 'none';
+        } else {
+            document.body.style.overflow = 'unset';
+            document.body.style.overscrollBehavior = 'auto';
+        }
+        return () => {
+            document.body.style.overflow = 'unset';
+            document.body.style.overscrollBehavior = 'auto';
+        };
+    }, [menuOpen]);
 
     return (
         <header className="w-full">
