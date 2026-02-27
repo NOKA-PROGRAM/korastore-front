@@ -211,9 +211,7 @@ export default function Header() {
                 )}
             </div>
 
-            {/* ─────────────────────────────────────────────────────────────
-          DESKTOP HEADER  (visible à partir de md)
-      ───────────────────────────────────────────────────────────── */}
+            {/* DESKTOP HEADER  (visible à partir de md)*/}
             <div className="hidden md:flex items-center justify-between bg-white border-b border-gray-100 px-4 lg:px-4 xl:px-7 h-20 gap-6 w-full mx-auto relative">
                 {/* Logo */}
                 <Link

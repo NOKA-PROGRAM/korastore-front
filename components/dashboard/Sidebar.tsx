@@ -52,8 +52,7 @@ export default function Sidebar({ onNavigate }: SidebarProps) {
 
     return (
         <aside
-            className="w-64 h-full flex flex-col"
-            style={{ backgroundColor: "#fff", borderRight: "1px solid #fff7ed" }}
+            className="w-full h-full flex flex-col bg-white"
         >
             {/* Navigation */}
             <nav className="flex flex-col gap-1 p-4 flex-1 overflow-y-auto">
@@ -66,7 +65,7 @@ export default function Sidebar({ onNavigate }: SidebarProps) {
                             onClick={onNavigate}
                             className={`flex items-center gap-3 px-4 py-3 rounded-xl text-sm font-medium transition-all border-2 ${isActive
                                 ? "border-orange-500 text-orange-600 bg-white shadow-sm"
-                                : "border-transparent text-gray-700 hover:bg-orange-50 hover:text-orange-600"
+                                : "border-gray-100 text-gray-700 hover:bg-orange-50 hover:text-orange-600"
                                 }`}
                         >
 
