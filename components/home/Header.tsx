@@ -12,16 +12,16 @@ const navLinks = [
 ];
 
 const shopItems = [
-    { label: 'Électronique', href: '/boutique/electronique' },
-    { label: 'Mode & Chaussures', href: '/boutique/mode' },
-    { label: 'Maison & Cuisine', href: '/boutique/maison' },
-    { label: 'Beauté & Cosmétiques', href: '/boutique/beaute' },
-    { label: 'Sport & Plein air', href: '/boutique/sport' },
-    { label: 'Santé & Bien-être', href: '/boutique/sante' },
-    { label: 'Bébé, enfants & jouets', href: '/boutique/bebe' },
-    { label: 'Epicerie & Alimentation', href: '/boutique/epicerie' },
-    { label: 'Auto & Moto', href: '/boutique/auto' },
-    { label: 'Bureau & Productivité', href: '/boutique/bureau' },
+    { label: 'Électronique', href: '/category/electronique' },
+    { label: 'Mode & Chaussures', href: '/category/mode-chaussures' },
+    { label: 'Maison & Cuisine', href: '/category/maison-cuisine' },
+    { label: 'Beauté & Cosmétiques', href: '/category/beaute-cosmetiques' },
+    { label: 'Sport & Plein air', href: '/category/sport-plein-air' },
+    { label: 'Santé & Bien-être', href: '/category/sante-bien-etre' },
+    { label: 'Bébé, enfants & jouets', href: '/category/bebe-enfants' },
+    { label: 'Epicerie & Alimentation', href: '/category/epicerie-alimentation' },
+    { label: 'Auto & Moto', href: '/category/auto-moto' },
+    { label: 'Bureau & Productivité', href: '/category/bureau-productivite' },
 ];
 
 const helpItems = [

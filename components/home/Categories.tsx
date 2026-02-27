@@ -19,8 +19,9 @@ export default function ShopByCategory() {
                 <div className="grid grid-cols-4 sm:grid-cols-4 md:grid-cols-5 lg:grid-cols-6 gap-3 md:gap-6 max-w-6xl mx-auto">
 
                     {categories.map((category) => (
-                        <div
+                        <Link
                             key={category.id}
+                            href={`/category/${category.slug}`}
                             className="flex flex-col items-center group cursor-pointer"
                         >
                             {/* Image Card */}
@@ -37,7 +38,7 @@ export default function ShopByCategory() {
                             <span className="mt-2 text-[11px] md:text-sm font-medium text-gray-800 text-center leading-tight">
                                 {category.name}
                             </span>
-                        </div>
+                        </Link>
                     ))}
 
                 </div>

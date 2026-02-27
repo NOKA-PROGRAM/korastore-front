@@ -1,6 +1,7 @@
 export interface Category {
     id: string;
     name: string;
+    slug: string;
     imageUrl: string;
 }
 
@@ -11,4 +12,6 @@ export interface Product {
     price: string;
     oldPrice?: string;
     discount?: string;
+    categoryId?: string;
+    isPopular?: boolean;
 }

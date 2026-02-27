@@ -23,20 +23,17 @@ export default function Footer() {
               </h3>
 
               <div className="grid grid-cols-2 gap-x-2 gap-y-3.5 text-[14px] md:text-[15px] font-medium text-white">
-                <Link href="#" className="hover:underline pr-2">Électronique & accessoires</Link>
-                <Link href="#" className="hover:underline">Vêtements & accessoires</Link>
+                <Link href="/category/electronique" className="hover:underline pr-2">Électronique & accessoires</Link>
+                <Link href="/category/mode-chaussures" className="hover:underline">Vêtements & accessoires</Link>
 
-                <Link href="#" className="hover:underline pr-2">Meubles & décoration</Link>
-                <Link href="#" className="hover:underline">Jouets & jeux</Link>
+                <Link href="/category/maison-cuisine" className="hover:underline pr-2">Meubles & décoration</Link>
+                <Link href="/category/bebe-enfants" className="hover:underline">Jouets & jeux</Link>
 
-                <Link href="#" className="hover:underline pr-2">Livres</Link>
-                <Link href="#" className="hover:underline">Articles de sport</Link>
+                <Link href="/category/sport-plein-air" className="hover:underline pr-2">Articles de sport</Link>
+                <Link href="/category/beaute-cosmetiques" className="hover:underline">Produits de beauté</Link>
 
-                <Link href="#" className="hover:underline pr-2">Produits de beauté</Link>
-                <Link href="#" className="hover:underline">Alimentation</Link>
-
-                <Link href="#" className="hover:underline pr-2">Bons plans</Link>
-                <Link href="#" className="hover:underline">Produits populaires</Link>
+                <Link href="/category/epicerie-alimentation" className="hover:underline pr-2">Alimentation</Link>
+                <Link href="/category/bureau-productivite" className="hover:underline">Bureau & Productivité</Link>
               </div>
             </div>
 

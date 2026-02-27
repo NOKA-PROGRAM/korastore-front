@@ -3,6 +3,7 @@
 import React, { useState, useMemo } from 'react';
 import type { Metadata } from 'next';
 import Image from 'next/image';
+import Link from 'next/link';
 import { ChevronLeft, ChevronRight } from 'lucide-react';
 import { categories } from '@/lib/data';
 import Footer from '@/components/home/Footer';
@@ -36,7 +37,7 @@ export default function CategoriesPage() {
     const pageNumbers = useMemo(() => {
         const pages = [];
         const maxPagesToShow = 5;
-        
+
         if (totalPages <= maxPagesToShow) {
             for (let i = 1; i <= totalPages; i++) {
                 pages.push(i);
@@ -44,37 +45,37 @@ export default function CategoriesPage() {
         } else {
             // Always show first page
             pages.push(1);
-            
+
             // Calculate range around current page
             let startPage = Math.max(2, currentPage - 1);
             let endPage = Math.min(totalPages - 1, currentPage + 1);
-            
+
             // Adjust if we're near the start or end
             if (currentPage <= 2) {
                 endPage = Math.min(totalPages - 1, 4);
             } else if (currentPage >= totalPages - 1) {
                 startPage = Math.max(2, totalPages - 3);
             }
-            
+
             // Add ellipsis if needed
             if (startPage > 2) {
                 pages.push('...');
             }
-            
+
             // Add page numbers
             for (let i = startPage; i <= endPage; i++) {
                 pages.push(i);
             }
-            
+
             // Add ellipsis if needed
             if (endPage < totalPages - 1) {
                 pages.push('...');
             }
-            
+
             // Always show last page
             pages.push(totalPages);
         }
-        
+
         return pages;
     }, [currentPage, totalPages]);
 
@@ -96,8 +97,9 @@ export default function CategoriesPage() {
                             {/* GRID */}
                             <div className="grid grid-cols-4 sm:grid-cols-4 md:grid-cols-5 lg:grid-cols-6 gap-3 md:gap-6 max-w-6xl mx-auto">
                                 {paginatedCategories.map((category) => (
-                                    <div
+                                    <Link
                                         key={category.id}
+                                        href={`/category/${category.slug}`}
                                         className="flex flex-col items-center group cursor-pointer"
                                     >
                                         {/* Image Card */}
@@ -114,7 +116,7 @@ export default function CategoriesPage() {
                                         <span className="mt-2 text-[11px] md:text-sm font-medium text-gray-800 text-center leading-tight">
                                             {category.name}
                                         </span>
-                                    </div>
+                                    </Link>
                                 ))}
                             </div>
 
@@ -140,11 +142,10 @@ export default function CategoriesPage() {
                                         <button
                                             key={page}
                                             onClick={() => goToPage(page as number)}
-                                            className={`px-4 py-2 rounded-lg font-medium transition-colors ${
-                                                currentPage === page
-                                                    ? 'bg-orange-500 text-white'
-                                                    : 'border border-gray-300 text-gray-700 hover:bg-gray-100'
-                                            }`}
+                                            className={`px-4 py-2 rounded-lg font-medium transition-colors ${currentPage === page
+                                                ? 'bg-orange-500 text-white'
+                                                : 'border border-gray-300 text-gray-700 hover:bg-gray-100'
+                                                }`}
                                         >
                                             {page}
                                         </button>
@@ -170,7 +171,7 @@ export default function CategoriesPage() {
                 {/* Footer */}
                 <Footer />
 
-                
+
             </div>
         </>
     );
