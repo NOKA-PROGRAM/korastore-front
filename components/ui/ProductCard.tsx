@@ -1,7 +1,11 @@
+'use client';
+
 import React from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
 import { Product } from '@/lib/types';
+import { useCart } from '@/lib/CartContext';
+import { useRouter } from 'next/navigation';
 
 interface ProductCardProps {
     product: Product;
@@ -9,6 +13,15 @@ interface ProductCardProps {
 
 export default function ProductCard({ product }: ProductCardProps) {
     const isPopular = product.isPopular;
+    const { addToCart } = useCart();
+    const router = useRouter();
+
+    const handleAddToCart = (e: React.MouseEvent) => {
+        e.preventDefault();
+        e.stopPropagation();
+        addToCart(product, 1);
+        router.push('/cart');
+    };
 
     return (
         <Link href={`/product/${product.id}`} className="block w-full">
@@ -67,6 +80,7 @@ export default function ProductCard({ product }: ProductCardProps) {
 
                     {/* BUTTON */}
                     <div
+                        onClick={handleAddToCart}
                         className="
                         mt-3
                         w-full

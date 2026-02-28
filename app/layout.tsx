@@ -1,6 +1,7 @@
 import type { Metadata } from 'next';
 import { Inter, Poppins } from 'next/font/google';
 import './globals.css';
+import { CartProvider } from '@/lib/CartContext';
 
 
 const inter = Inter({
@@ -39,7 +40,9 @@ export default function RootLayout({
   return (
     <html lang="fr" className={`${inter.variable} ${poppins.variable} overflow-x-hidden`}>
       <body className="antialiased bg-white text-gray-800 font-body overflow-x-hidden w-full">
-        {children}
+        <CartProvider>
+          {children}
+        </CartProvider>
       </body>
     </html>
   );

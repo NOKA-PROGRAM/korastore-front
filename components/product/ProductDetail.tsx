@@ -3,6 +3,8 @@
 import React, { useState } from 'react';
 import Image from 'next/image';
 import { Product } from '@/lib/types';
+import { useCart } from '@/lib/CartContext';
+import { useRouter } from 'next/navigation';
 
 interface ProductDetailProps {
     product: Product;
@@ -13,6 +15,15 @@ export default function ProductDetail({ product }: ProductDetailProps) {
     const [selectedImage, setSelectedImage] = useState(0);
     const [selectedColor, setSelectedColor] = useState(0);
     const [selectedSize, setSelectedSize] = useState<number | null>(null);
+    const { addToCart } = useCart();
+    const router = useRouter();
+
+    const handleAddToCart = () => {
+        const color = product.colors && selectedColor !== null ? product.colors[selectedColor] : undefined;
+        const size = product.sizes && selectedSize !== null ? product.sizes[selectedSize] : undefined;
+        addToCart(product, 1, color, size);
+        router.push('/cart');
+    };
 
     const hasColors = product.colors && product.colors.length > 0;
     const hasSizes = product.sizes && product.sizes.length > 0;
@@ -209,7 +220,9 @@ export default function ProductDetail({ product }: ProductDetailProps) {
 
                         {/* DESKTOP BUY BUTTON */}
                         <div className="hidden lg:block mt-8">
-                            <button className="w-full bg-orange-500 text-white py-4 rounded-xl text-lg font-bold hover:bg-orange-600 active:scale-[0.98] transition-all shadow-md">
+                            <button
+                                onClick={handleAddToCart}
+                                className="w-full bg-orange-500 text-white py-4 rounded-xl text-lg font-bold hover:bg-orange-600 active:scale-[0.98] transition-all shadow-md">
                                 Commander maintenant
                             </button>
                         </div>
@@ -219,7 +232,9 @@ export default function ProductDetail({ product }: ProductDetailProps) {
 
             {/* ========== MOBILE STICKY BUTTON ========== */}
             <div className="fixed bottom-0 left-0 right-0 bg-transparent backdrop-blur-md shadow-[0_-4px_20px_rgba(0,0,0,0.08)] p-4 lg:hidden z-30 pb-[calc(1rem+env(safe-area-inset-bottom))]">
-                <button className="w-full bg-orange-500 text-white py-3.5 rounded-xl text-base font-bold active:scale-[0.98] transition-all shadow-sm">
+                <button
+                    onClick={handleAddToCart}
+                    className="w-full bg-orange-500 text-white py-3.5 rounded-xl text-base font-bold active:scale-[0.98] transition-all shadow-sm">
                     Commander maintenant
                 </button>
             </div>
