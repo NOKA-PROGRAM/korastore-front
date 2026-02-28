@@ -33,7 +33,7 @@ export default function SimilarProducts({ products, categoryName, categorySlug }
                 </div>
 
                 <div className="relative -mx-4 px-4 md:mx-0 md:px-0">
-                    <div className="flex gap-4 md:gap-6 overflow-x-auto overflow-y-hidden snap-x snap-mandatory scrollbar-hide pt-4 pb-6 style={{ scrollPaddingLeft: '1rem' }}">
+                    <div className="flex gap-4 md:gap-6 overflow-x-auto overflow-y-hidden snap-x snap-mandatory scrollbar-hide pt-4 style={{ scrollPaddingLeft: '1rem' }}">
                         {products.map((product) => (
                             <div key={product.id} className="w-[160px] md:w-[220px] lg:w-[240px] shrink-0 snap-start">
                                 <ProductCard product={product} />
