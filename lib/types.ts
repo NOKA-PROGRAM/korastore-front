@@ -14,4 +14,10 @@ export interface Product {
     discount?: string;
     categoryId?: string;
     isPopular?: boolean;
+    images?: string[];
+    colors?: string[]; // Array of hex color codes
+    sizes?: string[];
+    description?: string;
+    features?: string[];
+    technicalSpecs?: Record<string, string>;
 }

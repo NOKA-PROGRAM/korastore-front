@@ -66,13 +66,35 @@ export const categories: Category[] = [
 export const popularProducts: Product[] = [
     {
         id: '1',
-        title: 'Boubou traditionnel Africain - Tissu Wax 100% Coton de haute qualité',
+        title: 'Tasse en Porcelaine Fine avec Motif Forêt et Hanse Dorée',
         img: 'https://images.pexels.com/photos/16675020/pexels-photo-16675020.jpeg',
-        price: '15.000',
-        oldPrice: '25.000',
-        discount: '-40%',
+        price: '800.000',
+        oldPrice: '500.000',
+        discount: '-30%',
         isPopular: true,
-        categoryId: 'mode-chaussures',
+        categoryId: 'maison-cuisine',
+        images: [
+            'https://images.pexels.com/photos/16675020/pexels-photo-16675020.jpeg',
+            'https://images.pexels.com/photos/3310069/pexels-photo-3310069.jpeg',
+            'https://images.pexels.com/photos/1207918/pexels-photo-1207918.jpeg',
+            'https://images.pexels.com/photos/4006122/pexels-photo-4006122.jpeg',
+            'https://images.pexels.com/photos/4607137/pexels-photo-4607137.jpeg'
+        ],
+        colors: ['#00A8E8', '#FF9A00', '#A30015', '#2BD959', '#000000'],
+        sizes: ['S', 'M', 'L', 'XL', '2XL', '3XL'],
+        description: 'La Tasse en Porcelaine Fine\nSuperbe tasse en porcelaine, alliant finesse artisanale et durabilité exceptionnelle. Que ce soit pour un espresso serré, un thé délicat ou un chocolat chaud réconfortant, elle transforme chaque gorgée en une véritable expérience sensorielle.',
+        features: [
+            'Matériau Noble : Fabriquée en porcelaine de haute qualité, elle offre une blancheur éclatante et une translucidité qui témoignent de sa pureté.',
+            'Design Ergonomique : Sa hanse a été pensée pour une prise en main équilibrée et confortable, évitant tout risque de brûlure.',
+            'Conservation de la Chaleur : La densité de la porcelaine permet de maintenir votre boisson à la température idéale plus longtemps qu\'une tasse en céramique classique.',
+            'Finition Haute Précision : Un émail lisse et brillant qui résiste aux taches de café et de thé, facilitant un nettoyage impeccable.'
+        ],
+        technicalSpecs: {
+            'Matériau': 'Porcelaine à feu (pâte dure)',
+            'Capacité': '250 ml (format standard)',
+            'Entretien': 'Compatible lave-vaisselle et micro-ondes',
+            'Style': 'Épuré et intemporel'
+        }
     },
     {
         id: '2',
@@ -83,6 +105,28 @@ export const popularProducts: Product[] = [
         discount: '-22%',
         isPopular: true,
         categoryId: 'electronique',
+        images: [
+            'https://images.pexels.com/photos/14979010/pexels-photo-14979010.jpeg',
+            'https://images.pexels.com/photos/3310069/pexels-photo-3310069.jpeg',
+            'https://images.pexels.com/photos/1207918/pexels-photo-1207918.jpeg',
+            'https://images.pexels.com/photos/4006122/pexels-photo-4006122.jpeg',
+            'https://images.pexels.com/photos/4607137/pexels-photo-4607137.jpeg'
+        ],
+        colors: ['#00A8E8', '#FF9A00', '#A30015', '#2BD959', '#000000'],
+        sizes: ['S', 'M', 'L', 'XL', '2XL', '3XL'],
+        description: 'Description du produit de haute qualité.\nCe produit allie finesse et durabilité exceptionnelle. Que ce soit pour un usage quotidien ou une occasion spéciale, il transforme chaque instant en une véritable expérience.\nDécouvrez une nouvelle façon de profiter de vos moments préférés avec ce produit conçu pour vous.',
+        features: [
+            'Qualité Supérieure : Fabriqué avec les meilleurs matériaux',
+            'Design Moderne : S\'adapte à tous les intérieurs et styles',
+            'Durabilité : Conçu pour une longue durée de vie sans compromis',
+            'Ergonomie : Une utilisation facile et un confort optimal au quotidien'
+        ],
+        technicalSpecs: {
+            'Matériau': 'Premium',
+            'Garantie': '1 an',
+            'Disponibilité': 'En stock',
+            'Expédition': 'Sous 24-48h'
+        }
     },
     {
         id: '3',
@@ -91,6 +135,28 @@ export const popularProducts: Product[] = [
         price: '5.500',
         isPopular: true,
         categoryId: 'sante-bien-etre',
+        images: [
+            'https://images.pexels.com/photos/27742135/pexels-photo-27742135.jpeg',
+            'https://images.pexels.com/photos/3310069/pexels-photo-3310069.jpeg',
+            'https://images.pexels.com/photos/1207918/pexels-photo-1207918.jpeg',
+            'https://images.pexels.com/photos/4006122/pexels-photo-4006122.jpeg',
+            'https://images.pexels.com/photos/4607137/pexels-photo-4607137.jpeg'
+        ],
+        colors: ['#00A8E8', '#FF9A00', '#A30015', '#2BD959', '#000000'],
+        sizes: ['S', 'M', 'L', 'XL', '2XL', '3XL'],
+        description: 'Description du produit de haute qualité.\nCe produit allie finesse et durabilité exceptionnelle. Que ce soit pour un usage quotidien ou une occasion spéciale, il transforme chaque instant en une véritable expérience.\nDécouvrez une nouvelle façon de profiter de vos moments préférés avec ce produit conçu pour vous.',
+        features: [
+            'Qualité Supérieure : Fabriqué avec les meilleurs matériaux',
+            'Design Moderne : S\'adapte à tous les intérieurs et styles',
+            'Durabilité : Conçu pour une longue durée de vie sans compromis',
+            'Ergonomie : Une utilisation facile et un confort optimal au quotidien'
+        ],
+        technicalSpecs: {
+            'Matériau': 'Premium',
+            'Garantie': '1 an',
+            'Disponibilité': 'En stock',
+            'Expédition': 'Sous 24-48h'
+        }
     },
     {
         id: '4',
@@ -101,6 +167,28 @@ export const popularProducts: Product[] = [
         discount: '-20%',
         isPopular: true,
         categoryId: 'mode-chaussures',
+        images: [
+            'https://images.pexels.com/photos/3731256/pexels-photo-3731256.jpeg',
+            'https://images.pexels.com/photos/3310069/pexels-photo-3310069.jpeg',
+            'https://images.pexels.com/photos/1207918/pexels-photo-1207918.jpeg',
+            'https://images.pexels.com/photos/4006122/pexels-photo-4006122.jpeg',
+            'https://images.pexels.com/photos/4607137/pexels-photo-4607137.jpeg'
+        ],
+        colors: ['#00A8E8', '#FF9A00', '#A30015', '#2BD959', '#000000'],
+        sizes: ['S', 'M', 'L', 'XL', '2XL', '3XL'],
+        description: 'Description du produit de haute qualité.\nCe produit allie finesse et durabilité exceptionnelle. Que ce soit pour un usage quotidien ou une occasion spéciale, il transforme chaque instant en une véritable expérience.\nDécouvrez une nouvelle façon de profiter de vos moments préférés avec ce produit conçu pour vous.',
+        features: [
+            'Qualité Supérieure : Fabriqué avec les meilleurs matériaux',
+            'Design Moderne : S\'adapte à tous les intérieurs et styles',
+            'Durabilité : Conçu pour une longue durée de vie sans compromis',
+            'Ergonomie : Une utilisation facile et un confort optimal au quotidien'
+        ],
+        technicalSpecs: {
+            'Matériau': 'Premium',
+            'Garantie': '1 an',
+            'Disponibilité': 'En stock',
+            'Expédition': 'Sous 24-48h'
+        }
     },
     {
         id: '5',
@@ -111,6 +199,28 @@ export const popularProducts: Product[] = [
         discount: '-22%',
         isPopular: true,
         categoryId: 'electronique',
+        images: [
+            'https://images.pexels.com/photos/14979010/pexels-photo-14979010.jpeg',
+            'https://images.pexels.com/photos/3310069/pexels-photo-3310069.jpeg',
+            'https://images.pexels.com/photos/1207918/pexels-photo-1207918.jpeg',
+            'https://images.pexels.com/photos/4006122/pexels-photo-4006122.jpeg',
+            'https://images.pexels.com/photos/4607137/pexels-photo-4607137.jpeg'
+        ],
+        colors: ['#00A8E8', '#FF9A00', '#A30015', '#2BD959', '#000000'],
+        sizes: ['S', 'M', 'L', 'XL', '2XL', '3XL'],
+        description: 'Description du produit de haute qualité.\nCe produit allie finesse et durabilité exceptionnelle. Que ce soit pour un usage quotidien ou une occasion spéciale, il transforme chaque instant en une véritable expérience.\nDécouvrez une nouvelle façon de profiter de vos moments préférés avec ce produit conçu pour vous.',
+        features: [
+            'Qualité Supérieure : Fabriqué avec les meilleurs matériaux',
+            'Design Moderne : S\'adapte à tous les intérieurs et styles',
+            'Durabilité : Conçu pour une longue durée de vie sans compromis',
+            'Ergonomie : Une utilisation facile et un confort optimal au quotidien'
+        ],
+        technicalSpecs: {
+            'Matériau': 'Premium',
+            'Garantie': '1 an',
+            'Disponibilité': 'En stock',
+            'Expédition': 'Sous 24-48h'
+        }
     },
 ];
 
@@ -123,6 +233,28 @@ export const products: Product[] = [
         price: '850.000',
         categoryId: 'electronique',
         isPopular: false,
+        images: [
+            'https://images.pexels.com/photos/459633/pexels-photo-459633.jpeg',
+            'https://images.pexels.com/photos/3310069/pexels-photo-3310069.jpeg',
+            'https://images.pexels.com/photos/1207918/pexels-photo-1207918.jpeg',
+            'https://images.pexels.com/photos/4006122/pexels-photo-4006122.jpeg',
+            'https://images.pexels.com/photos/4607137/pexels-photo-4607137.jpeg'
+        ],
+        colors: ['#00A8E8', '#FF9A00', '#A30015', '#2BD959', '#000000'],
+        sizes: ['S', 'M', 'L', 'XL', '2XL', '3XL'],
+        description: 'Description du produit de haute qualité.\nCe produit allie finesse et durabilité exceptionnelle. Que ce soit pour un usage quotidien ou une occasion spéciale, il transforme chaque instant en une véritable expérience.\nDécouvrez une nouvelle façon de profiter de vos moments préférés avec ce produit conçu pour vous.',
+        features: [
+            'Qualité Supérieure : Fabriqué avec les meilleurs matériaux',
+            'Design Moderne : S\'adapte à tous les intérieurs et styles',
+            'Durabilité : Conçu pour une longue durée de vie sans compromis',
+            'Ergonomie : Une utilisation facile et un confort optimal au quotidien'
+        ],
+        technicalSpecs: {
+            'Matériau': 'Premium',
+            'Garantie': '1 an',
+            'Disponibilité': 'En stock',
+            'Expédition': 'Sous 24-48h'
+        }
     },
     {
         id: '7',
@@ -133,6 +265,28 @@ export const products: Product[] = [
         discount: '-25%',
         categoryId: 'electronique',
         isPopular: true,
+        images: [
+            'https://images.pexels.com/photos/3394651/pexels-photo-3394651.jpeg',
+            'https://images.pexels.com/photos/3310069/pexels-photo-3310069.jpeg',
+            'https://images.pexels.com/photos/1207918/pexels-photo-1207918.jpeg',
+            'https://images.pexels.com/photos/4006122/pexels-photo-4006122.jpeg',
+            'https://images.pexels.com/photos/4607137/pexels-photo-4607137.jpeg'
+        ],
+        colors: ['#00A8E8', '#FF9A00', '#A30015', '#2BD959', '#000000'],
+        sizes: ['S', 'M', 'L', 'XL', '2XL', '3XL'],
+        description: 'Description du produit de haute qualité.\nCe produit allie finesse et durabilité exceptionnelle. Que ce soit pour un usage quotidien ou une occasion spéciale, il transforme chaque instant en une véritable expérience.\nDécouvrez une nouvelle façon de profiter de vos moments préférés avec ce produit conçu pour vous.',
+        features: [
+            'Qualité Supérieure : Fabriqué avec les meilleurs matériaux',
+            'Design Moderne : S\'adapte à tous les intérieurs et styles',
+            'Durabilité : Conçu pour une longue durée de vie sans compromis',
+            'Ergonomie : Une utilisation facile et un confort optimal au quotidien'
+        ],
+        technicalSpecs: {
+            'Matériau': 'Premium',
+            'Garantie': '1 an',
+            'Disponibilité': 'En stock',
+            'Expédition': 'Sous 24-48h'
+        }
     },
     {
         id: '8',
@@ -141,6 +295,28 @@ export const products: Product[] = [
         price: '25.000',
         categoryId: 'electronique',
         isPopular: false,
+        images: [
+            'https://images.pexels.com/photos/11016147/pexels-photo-11016147.jpeg',
+            'https://images.pexels.com/photos/3310069/pexels-photo-3310069.jpeg',
+            'https://images.pexels.com/photos/1207918/pexels-photo-1207918.jpeg',
+            'https://images.pexels.com/photos/4006122/pexels-photo-4006122.jpeg',
+            'https://images.pexels.com/photos/4607137/pexels-photo-4607137.jpeg'
+        ],
+        colors: ['#00A8E8', '#FF9A00', '#A30015', '#2BD959', '#000000'],
+        sizes: ['S', 'M', 'L', 'XL', '2XL', '3XL'],
+        description: 'Description du produit de haute qualité.\nCe produit allie finesse et durabilité exceptionnelle. Que ce soit pour un usage quotidien ou une occasion spéciale, il transforme chaque instant en une véritable expérience.\nDécouvrez une nouvelle façon de profiter de vos moments préférés avec ce produit conçu pour vous.',
+        features: [
+            'Qualité Supérieure : Fabriqué avec les meilleurs matériaux',
+            'Design Moderne : S\'adapte à tous les intérieurs et styles',
+            'Durabilité : Conçu pour une longue durée de vie sans compromis',
+            'Ergonomie : Une utilisation facile et un confort optimal au quotidien'
+        ],
+        technicalSpecs: {
+            'Matériau': 'Premium',
+            'Garantie': '1 an',
+            'Disponibilité': 'En stock',
+            'Expédition': 'Sous 24-48h'
+        }
     },
     {
         id: '9',
@@ -149,6 +325,28 @@ export const products: Product[] = [
         price: '350.000',
         categoryId: 'electronique',
         isPopular: true,
+        images: [
+            'https://images.pexels.com/photos/51383/photo-camera-subject-photographer-51383.jpeg',
+            'https://images.pexels.com/photos/3310069/pexels-photo-3310069.jpeg',
+            'https://images.pexels.com/photos/1207918/pexels-photo-1207918.jpeg',
+            'https://images.pexels.com/photos/4006122/pexels-photo-4006122.jpeg',
+            'https://images.pexels.com/photos/4607137/pexels-photo-4607137.jpeg'
+        ],
+        colors: ['#00A8E8', '#FF9A00', '#A30015', '#2BD959', '#000000'],
+        sizes: ['S', 'M', 'L', 'XL', '2XL', '3XL'],
+        description: 'Description du produit de haute qualité.\nCe produit allie finesse et durabilité exceptionnelle. Que ce soit pour un usage quotidien ou une occasion spéciale, il transforme chaque instant en une véritable expérience.\nDécouvrez une nouvelle façon de profiter de vos moments préférés avec ce produit conçu pour vous.',
+        features: [
+            'Qualité Supérieure : Fabriqué avec les meilleurs matériaux',
+            'Design Moderne : S\'adapte à tous les intérieurs et styles',
+            'Durabilité : Conçu pour une longue durée de vie sans compromis',
+            'Ergonomie : Une utilisation facile et un confort optimal au quotidien'
+        ],
+        technicalSpecs: {
+            'Matériau': 'Premium',
+            'Garantie': '1 an',
+            'Disponibilité': 'En stock',
+            'Expédition': 'Sous 24-48h'
+        }
     },
     {
         id: '10',
@@ -157,6 +355,28 @@ export const products: Product[] = [
         price: '95.000',
         categoryId: 'electronique',
         isPopular: false,
+        images: [
+            'https://images.pexels.com/photos/1334597/pexels-photo-1334597.jpeg',
+            'https://images.pexels.com/photos/3310069/pexels-photo-3310069.jpeg',
+            'https://images.pexels.com/photos/1207918/pexels-photo-1207918.jpeg',
+            'https://images.pexels.com/photos/4006122/pexels-photo-4006122.jpeg',
+            'https://images.pexels.com/photos/4607137/pexels-photo-4607137.jpeg'
+        ],
+        colors: ['#00A8E8', '#FF9A00', '#A30015', '#2BD959', '#000000'],
+        sizes: ['S', 'M', 'L', 'XL', '2XL', '3XL'],
+        description: 'Description du produit de haute qualité.\nCe produit allie finesse et durabilité exceptionnelle. Que ce soit pour un usage quotidien ou une occasion spéciale, il transforme chaque instant en une véritable expérience.\nDécouvrez une nouvelle façon de profiter de vos moments préférés avec ce produit conçu pour vous.',
+        features: [
+            'Qualité Supérieure : Fabriqué avec les meilleurs matériaux',
+            'Design Moderne : S\'adapte à tous les intérieurs et styles',
+            'Durabilité : Conçu pour une longue durée de vie sans compromis',
+            'Ergonomie : Une utilisation facile et un confort optimal au quotidien'
+        ],
+        technicalSpecs: {
+            'Matériau': 'Premium',
+            'Garantie': '1 an',
+            'Disponibilité': 'En stock',
+            'Expédition': 'Sous 24-48h'
+        }
     },
     {
         id: '11',
@@ -165,6 +385,28 @@ export const products: Product[] = [
         price: '15.000',
         categoryId: 'electronique',
         isPopular: true,
+        images: [
+            'https://images.pexels.com/photos/3780681/pexels-photo-3780681.jpeg',
+            'https://images.pexels.com/photos/3310069/pexels-photo-3310069.jpeg',
+            'https://images.pexels.com/photos/1207918/pexels-photo-1207918.jpeg',
+            'https://images.pexels.com/photos/4006122/pexels-photo-4006122.jpeg',
+            'https://images.pexels.com/photos/4607137/pexels-photo-4607137.jpeg'
+        ],
+        colors: ['#00A8E8', '#FF9A00', '#A30015', '#2BD959', '#000000'],
+        sizes: ['S', 'M', 'L', 'XL', '2XL', '3XL'],
+        description: 'Description du produit de haute qualité.\nCe produit allie finesse et durabilité exceptionnelle. Que ce soit pour un usage quotidien ou une occasion spéciale, il transforme chaque instant en une véritable expérience.\nDécouvrez une nouvelle façon de profiter de vos moments préférés avec ce produit conçu pour vous.',
+        features: [
+            'Qualité Supérieure : Fabriqué avec les meilleurs matériaux',
+            'Design Moderne : S\'adapte à tous les intérieurs et styles',
+            'Durabilité : Conçu pour une longue durée de vie sans compromis',
+            'Ergonomie : Une utilisation facile et un confort optimal au quotidien'
+        ],
+        technicalSpecs: {
+            'Matériau': 'Premium',
+            'Garantie': '1 an',
+            'Disponibilité': 'En stock',
+            'Expédition': 'Sous 24-48h'
+        }
     },
     {
         id: '12',
@@ -173,6 +415,28 @@ export const products: Product[] = [
         price: '30.000',
         categoryId: 'electronique',
         isPopular: false,
+        images: [
+            'https://images.pexels.com/photos/1279107/pexels-photo-1279107.jpeg',
+            'https://images.pexels.com/photos/3310069/pexels-photo-3310069.jpeg',
+            'https://images.pexels.com/photos/1207918/pexels-photo-1207918.jpeg',
+            'https://images.pexels.com/photos/4006122/pexels-photo-4006122.jpeg',
+            'https://images.pexels.com/photos/4607137/pexels-photo-4607137.jpeg'
+        ],
+        colors: ['#00A8E8', '#FF9A00', '#A30015', '#2BD959', '#000000'],
+        sizes: ['S', 'M', 'L', 'XL', '2XL', '3XL'],
+        description: 'Description du produit de haute qualité.\nCe produit allie finesse et durabilité exceptionnelle. Que ce soit pour un usage quotidien ou une occasion spéciale, il transforme chaque instant en une véritable expérience.\nDécouvrez une nouvelle façon de profiter de vos moments préférés avec ce produit conçu pour vous.',
+        features: [
+            'Qualité Supérieure : Fabriqué avec les meilleurs matériaux',
+            'Design Moderne : S\'adapte à tous les intérieurs et styles',
+            'Durabilité : Conçu pour une longue durée de vie sans compromis',
+            'Ergonomie : Une utilisation facile et un confort optimal au quotidien'
+        ],
+        technicalSpecs: {
+            'Matériau': 'Premium',
+            'Garantie': '1 an',
+            'Disponibilité': 'En stock',
+            'Expédition': 'Sous 24-48h'
+        }
     },
 
 ];
