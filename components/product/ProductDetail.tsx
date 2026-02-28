@@ -28,7 +28,7 @@ export default function ProductDetail({ product }: ProductDetailProps) {
 
                     {/* ========== LEFT: IMAGES ========== */}
                     <div className="lg:w-1/2 lg:sticky lg:top-24 lg:self-start">
-                        <div className="px-4 pt-2 lg:px-0 lg:pt-0">
+                        <div className="px-4 lg:px-0 lg:pt-0">
                             <div className="relative w-full aspect-square bg-gray-50 rounded-2xl overflow-hidden shadow-sm">
 
                                 {product.discount && (

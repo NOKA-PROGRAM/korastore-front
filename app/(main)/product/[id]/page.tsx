@@ -19,7 +19,7 @@ export default async function ProductPage({ params }: { params: Promise<{ id: st
     const similarProducts = products.filter((p) => p.categoryId === product.categoryId && p.id !== product.id).slice(0, 10);
 
     return (
-        <main className="min-h-screen bg-white flex flex-col pt-16 md:pt-24">
+        <main className="min-h-screen bg-white flex flex-col pt-10 md:pt-4">
             <ProductDetail product={product} />
             <Features />
             <SimilarProducts
