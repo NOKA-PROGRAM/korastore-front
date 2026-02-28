@@ -216,7 +216,7 @@ export default function CartPage() {
     const renderStep3 = () => (
         <div className="flex flex-col items-center pb-4 relative mt-4 md:mt-4 w-full">
 
-            <div className="bg-white rounded-[2rem] border border-transparent shadow-[0_0_40px_rgba(0,0,0,0.06)] p-6 md:p-10 w-full flex flex-col items-center mt-[-2rem] pt-14">
+            <div className="bg-white p-6 md:p-10 w-full flex flex-col items-center mt-[-2rem] pt-14">
                 <h2 className="text-center font-bold text-[15px] md:text-[17px] leading-snug mb-8 text-[#1a1a1a] max-w-[260px]">
                     Veuillez remplir ce formulaire pour<br />Finalisez votre commande
                 </h2>
@@ -337,22 +337,34 @@ export default function CartPage() {
         <div className="min-h-screen bg-white md:bg-white flex flex-col items-center pb-8">
             {/* TOP BAR — Orange header for Mes Commandes */}
             {step === 1 && (
-                <div className="w-full bg-[#ff8c00] text-white py-4 md:py-6 sticky top-0 z-50 shadow-md">
-                    <div className="max-w-2xl mx-auto px-4 flex items-center justify-center relative">
-                        <Link href="/" className="absolute left-6 md:left-8 top-1/2 -translate-y-1/2">
+                <div className="w-full bg-[#ff8c00] text-white sticky top-0 z-50 shadow-md">
+                    <div className="w-full max-w-screen-xl mx-auto px-4 sm:px-6 lg:px-12 py-4 md:py-6 flex items-center justify-between">
+
+                        {/* Left - Cart */}
+                        <Link href="/" className="flex items-center gap-2">
                             <div className="relative">
-                                <ShoppingCart className="w-7 h-7" />
+                                <ShoppingCart className="w-6 h-6 sm:w-7 sm:h-7" />
                                 {cartCount > 0 && (
-                                    <span className="absolute -top-2 -right-2 bg-red-600 text-white text-[10px] font-bold w-4 h-4 rounded-full flex items-center justify-center">
+                                    <span className="absolute -top-2 -right-2 bg-red-600 text-white text-[10px] font-bold min-w-[18px] h-[18px] px-1 rounded-full flex items-center justify-center">
                                         {cartCount}
                                     </span>
                                 )}
                             </div>
                         </Link>
-                        <div className="text-center">
-                            <h1 className="text-xl md:text-2xl font-bold">Mes Commandes</h1>
-                            <p className="text-sm opacity-90">{cartCount} {cartCount > 1 ? 'articles' : 'article'} dans votre panier</p>
+
+                        {/* Center - Title */}
+                        <div className="text-center flex-1">
+                            <h1 className="text-lg sm:text-xl md:text-2xl font-bold">
+                                Mes Commandes
+                            </h1>
+                            <p className="text-xs sm:text-sm opacity-90">
+                                {cartCount} {cartCount > 1 ? 'articles' : 'article'} dans votre panier
+                            </p>
                         </div>
+
+                        {/* Right - Empty spacer (for symmetry) */}
+                        <div className="w-6 sm:w-7" />
+
                     </div>
                 </div>
             )}
