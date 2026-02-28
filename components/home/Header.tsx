@@ -129,7 +129,7 @@ export default function Header() {
                             </div>
 
                             {/* Scrollable Content */}
-                            <div className="flex-1 overflow-y-auto">
+                            <div className="flex-1 overflow-y-auto flex flex-col">
                                 {/* Menu Items */}
                                 <div className="px-4 py-6">
                                     <AccordionPrimitive.Root type="single" collapsible className="space-y-2">
@@ -206,7 +206,7 @@ export default function Header() {
                                 </div>
 
                                 {/* Footer */}
-                                <div className="px-4 py-6 space-y-4">
+                                <div className="px-4 py-6 space-y-4 mt-auto pb-[calc(1.5rem+env(safe-area-inset-bottom))]">
                                     <div className="text-center">
                                         <h3 className="text-gray-900 font-bold text-base mb-4">Besoin d'assistance?</h3>
                                         <a

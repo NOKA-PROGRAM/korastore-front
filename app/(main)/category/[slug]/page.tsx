@@ -59,7 +59,7 @@ export default function CategoryDetailsPage() {
     }
 
     return (
-        <div className="w-full min-h-screen bg-white">
+        <div className="w-full min-h-[100dvh] bg-white">
             <main className="max-w-7xl mx-auto px-4 py-8 md:py-12">
                 {/* Header */}
                 <h1 className="text-xl md:text-3xl font-bold text-gray-900 mb-6 md:mb-10">

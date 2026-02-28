@@ -19,7 +19,7 @@ export default function HomePage() {
   return (
     <>
 
-      <div className="w-full min-h-screen overflow-x-hidden">
+      <div className="w-full min-h-[100dvh] overflow-x-hidden">
         <main id="main-content">
           {/* Category Navigation */}
           <Suspense fallback={<div className="h-40 animate-pulse bg-gray-100 mx-4 rounded-xl" />}>
@@ -38,7 +38,7 @@ export default function HomePage() {
           <Features />
 
           {/* About text */}
-          
+
 
           {/* FAQ Accordion */}
           <Faq />

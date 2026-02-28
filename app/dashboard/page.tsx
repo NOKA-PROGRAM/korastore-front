@@ -22,7 +22,7 @@ export default function Dashboard() {
 
     return (
         /* Conteneur racine : hauteur écran fixe, overflow hidden pour empêcher le body de scroller */
-        <div className="h-screen overflow-hidden bg-white flex flex-col">
+        <div className="h-[100dvh] overflow-hidden bg-white flex flex-col">
 
             {/* HEADER — pleine largeur, fixe en haut */}
             <Header isSidebarOpen={isSidebarOpen} onToggleSidebar={toggleSidebar} />
@@ -76,7 +76,7 @@ export default function Dashboard() {
 
                     {/* SIDEBAR FIXE — desktop uniquement */}
                     <aside className="hidden lg:block w-64 flex-shrink-0">
-                        <div className="sticky top-0 h-[calc(100vh-64px)] overflow-y-auto border-r border-[#fff7ed]">
+                        <div className="sticky top-0 h-[calc(100dvh-64px)] overflow-y-auto border-r border-[#fff7ed]">
                             <Sidebar />
                         </div>
                     </aside>

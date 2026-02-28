@@ -82,7 +82,7 @@ export default function CategoriesPage() {
     return (
         <>
 
-            <div className="w-full min-h-screen overflow-x-hidden">
+            <div className="w-full min-h-[100dvh] overflow-x-hidden">
                 <main id="main-content" className="bg-white">
                     {/* Categories Section */}
                     <section className="w-full bg-white">

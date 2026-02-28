@@ -27,7 +27,7 @@ export default function ProductDetail({ product }: ProductDetailProps) {
                 <div className="flex flex-col lg:flex-row lg:gap-10 lg:px-6 lg:py-8">
 
                     {/* ========== LEFT: IMAGES ========== */}
-                    <div className="lg:w-1/2 lg:sticky lg:top-24 lg:self-start">
+                    <div className="w-full lg:w-5/12 xl:w-[40%] lg:sticky lg:top-24 lg:self-start">
                         <div className="px-4 lg:px-0 lg:pt-0">
                             <div className="relative w-full aspect-square bg-gray-50 rounded-2xl overflow-hidden shadow-sm">
 
