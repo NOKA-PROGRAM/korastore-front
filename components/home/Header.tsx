@@ -77,7 +77,7 @@ export default function Header() {
                     </Link>
 
                     {/* Cart */}
-                    <Link href="/panier" aria-label="Mon panier" className="relative text-white hover:text-orange-100 transition-colors">
+                    <Link href="/cart" aria-label="Mon panier" className="relative text-white hover:text-orange-100 transition-colors">
                         <ShoppingCart className="w-7 h-7" />
                         <span className="absolute -top-1.5 -right-2 bg-rose-600 text-white text-[10px] font-extrabold w-4.5 h-4.5 min-w-4.5 min-h-4.5 rounded-full flex items-center justify-center px-0.5 shadow-sm border border-orange-500">
                             2
@@ -381,7 +381,7 @@ export default function Header() {
                     
                     {/* Panier */}
                     <Link
-                        href="/panier"
+                        href="/cart"
                         className="flex items-center gap-1.5 text-sm font-bold text-gray-700 hover:text-orange-600 transition-colors relative"
                         aria-label="Mon panier"
                     >

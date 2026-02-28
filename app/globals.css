@@ -22,6 +22,7 @@ html {
     /* iOS: prevent text size adjustment on orientation change */
     -webkit-text-size-adjust: 100%;
     text-size-adjust: 100%;
+    overscroll-behavior: none;
 }
 
 body {
@@ -30,6 +31,7 @@ body {
     width: 100%;
     /* Safari: disable tap highlight */
     -webkit-tap-highlight-color: transparent;
+    overscroll-behavior: none;
 }
 
 h1,
