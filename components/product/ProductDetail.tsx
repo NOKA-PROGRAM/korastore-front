@@ -218,7 +218,7 @@ export default function ProductDetail({ product }: ProductDetailProps) {
             </div>
 
             {/* ========== MOBILE STICKY BUTTON ========== */}
-            <div className="fixed bottom-0 left-0 right-0 bg-white/95 backdrop-blur-md border-t border-gray-100 shadow-[0_-4px_20px_rgba(0,0,0,0.08)] p-4 lg:hidden z-50 pb-[calc(1rem+env(safe-area-inset-bottom))]">
+            <div className="fixed bottom-0 left-0 right-0 bg-white/95 backdrop-blur-md border-t border-gray-100 shadow-[0_-4px_20px_rgba(0,0,0,0.08)] p-4 lg:hidden z-30 pb-[calc(1rem+env(safe-area-inset-bottom))]">
                 <button className="w-full bg-orange-500 text-white py-3.5 rounded-xl text-base font-bold active:scale-[0.98] transition-all shadow-sm">
                     Commander maintenant
                 </button>

@@ -42,17 +42,13 @@ export default function FixedHeader() {
         <>
             {/* Fixed header container */}
             <div
-                className="fixed top-0 left-0 right-0 z-40 w-full font-title"
+                className="fixed top-0 left-0 right-0 z-50 w-full font-title transition-transform duration-300 ease-in-out"
+                style={{
+                    transform: bannerVisible ? 'translateY(0)' : `translateY(-${bannerHeight}px)`,
+                }}
             >
-                {/* Top Banner — slides up when hidden */}
-                <div
-                    ref={bannerRef}
-                    className="transition-all duration-300 ease-in-out overflow-hidden"
-                    style={{
-                        maxHeight: bannerVisible ? '60px' : '0px',
-                        opacity: bannerVisible ? 1 : 0,
-                    }}
-                >
+                {/* Top Banner */}
+                <div ref={bannerRef}>
                     <TopBanner />
                 </div>
 
@@ -60,13 +56,8 @@ export default function FixedHeader() {
                 <Header />
             </div>
 
-            {/* Spacer — adjusts dynamically when banner hides */}
-            <div
-                className="w-full transition-all duration-300 ease-in-out h-[156px] md:h-[132px]"
-                style={{
-                    marginTop: bannerVisible ? 0 : `-${bannerHeight}px`,
-                }}
-            />
+            {/* Spacer — provides initial layout space */}
+            <div className="w-full h-[156px] md:h-[132px]" />
         </>
     );
 }

@@ -4,6 +4,7 @@ import React, { useState, useEffect } from 'react';
 import Link from 'next/link';
 import { User, ShoppingCart, Search, Menu, X, ChevronDown, MessageCircle, Home, Store, HelpCircle } from 'lucide-react';
 import * as AccordionPrimitive from '@radix-ui/react-accordion';
+import { createPortal } from 'react-dom';
 
 const navLinks = [
     { label: 'ACCUEIL', href: '/', isAccordion: false },
@@ -34,6 +35,11 @@ const helpItems = [
 export default function Header() {
     const [menuOpen, setMenuOpen] = useState(false);
     const [megaMenuOpen, setMegaMenuOpen] = useState<string | null>(null);
+    const [mounted, setMounted] = useState(false);
+
+    useEffect(() => {
+        setMounted(true);
+    }, []);
 
     // Freeze body scroll when mobile menu is open
     useEffect(() => {
@@ -90,11 +96,11 @@ export default function Header() {
                 </div>
 
                 {/* Mobile Nav Fullscreen Modal */}
-                {menuOpen && (
-                    <>
+                {mounted && menuOpen && createPortal(
+                    <div className="fixed inset-0 z-[9999] flex md:hidden">
                         {/* Backdrop */}
                         <div
-                            className="fixed inset-0 bg-black/30 backdrop-blur-sm md:hidden z-30"
+                            className="absolute inset-0 bg-black/30 backdrop-blur-sm"
                             onClick={() => setMenuOpen(false)}
                             aria-hidden="true"
                         />
@@ -102,10 +108,10 @@ export default function Header() {
                         {/* Fullscreen Menu */}
                         <nav
                             aria-label="Navigation mobile"
-                            className="fixed inset-0 md:hidden z-40 bg-white flex flex-col overflow-y-auto"
+                            className="absolute inset-0 bg-white flex flex-col h-[100dvh] w-full overflow-hidden"
                         >
-                            {/* Header with Logo and Close Button */}
-                            <div className="flex items-center justify-between pl-8 pr-4 py-4 sticky top-0 bg-white">
+                            {/* Header with Logo and Close Button (Fixed at top) */}
+                            <div className="flex items-center justify-between pl-8 pr-4 py-4 bg-white shrink-0">
                                 <Link
                                     href="/"
                                     onClick={() => setMenuOpen(false)}
@@ -122,107 +128,102 @@ export default function Header() {
                                 </button>
                             </div>
 
-                            {/* Menu Items */}
-                            <div className="flex-1 px-4 py-6">
-                                <AccordionPrimitive.Root type="single" collapsible className="space-y-2">
-                                    {/* COMPTE - Added to burger menu 
-                                    <Link
-                                        href="/compte"
-                                        onClick={() => setMenuOpen(false)}
-                                        className="flex items-center gap-3 text-gray-900 font-bold text-lg py-3 px-3 hover:bg-gray-100 rounded-lg transition-colors"
-                                    >
-                                        COMPTE
-                                    </Link>
-                                    */}
-                                    {/* ACCUEIL - Regular Link */}
-                                    <Link
-                                        href="/"
-                                        onClick={() => setMenuOpen(false)}
-                                        className="flex items-center gap-3 text-gray-900 font-bold text-lg py-3 px-3 hover:bg-gray-100 rounded-lg transition-colors"
-                                    >
-                                        <div className="w-10 h-10 rounded-[10px] bg-[#FB8500] flex items-center justify-center shrink-0 shadow-sm">
-                                            <Home className="w-5 h-5 text-white" />
-                                        </div>
-                                        Accueil
-                                    </Link>
-
-                                    {/* BOUTIQUE - Accordion */}
-                                    <AccordionPrimitive.Item value="boutique" className="border-0">
-                                        <AccordionPrimitive.Header className="flex">
-                                            <AccordionPrimitive.Trigger className="flex flex-1 items-center justify-between text-gray-900 font-bold text-lg py-3 px-3 hover:bg-gray-100 rounded-lg transition-colors [&[data-state=open]>svg]:rotate-180">
-                                                <div className="flex items-center gap-3">
-                                                    <div className="w-10 h-10 rounded-[10px] bg-[#FB8500] flex items-center justify-center shrink-0 shadow-sm">
-                                                        <Store className="w-5 h-5 text-white" />
-                                                    </div>
-                                                    Boutique
-                                                </div>
-                                                <ChevronDown className="w-5 h-5 text-orange-500 shrink-0 transition-transform duration-200" />
-                                            </AccordionPrimitive.Trigger>
-                                        </AccordionPrimitive.Header>
-                                        <AccordionPrimitive.Content className="pb-0">
-                                            <div className="space-y-1 pl-[52px] pb-3">
-                                                {shopItems.map((item) => (
-                                                    <Link
-                                                        key={item.href}
-                                                        href={item.href}
-                                                        onClick={() => setMenuOpen(false)}
-                                                        className="block text-gray-700 text-sm py-2.5 px-3 hover:text-orange-600 hover:bg-gray-100 rounded-lg transition-colors"
-                                                    >
-                                                        {item.label}
-                                                    </Link>
-                                                ))}
+                            {/* Scrollable Content */}
+                            <div className="flex-1 overflow-y-auto">
+                                {/* Menu Items */}
+                                <div className="px-4 py-6">
+                                    <AccordionPrimitive.Root type="single" collapsible className="space-y-2">
+                                        {/* ACCUEIL - Regular Link */}
+                                        <Link
+                                            href="/"
+                                            onClick={() => setMenuOpen(false)}
+                                            className="flex items-center gap-3 text-gray-900 font-bold text-lg py-3 px-3 hover:bg-gray-100 rounded-lg transition-colors"
+                                        >
+                                            <div className="w-10 h-10 rounded-[10px] bg-[#FB8500] flex items-center justify-center shrink-0 shadow-sm">
+                                                <Home className="w-5 h-5 text-white" />
                                             </div>
-                                        </AccordionPrimitive.Content>
-                                    </AccordionPrimitive.Item>
+                                            Accueil
+                                        </Link>
 
-                                    {/* AIDE - Accordion */}
-                                    <AccordionPrimitive.Item value="aide" className="border-0">
-                                        <AccordionPrimitive.Header className="flex">
-                                            <AccordionPrimitive.Trigger className="flex flex-1 items-center justify-between text-gray-900 font-bold text-lg py-3 px-3 hover:bg-gray-100 rounded-lg transition-colors [&[data-state=open]>svg]:rotate-180">
-                                                <div className="flex items-center gap-3">
-                                                    <div className="w-10 h-10 rounded-[10px] bg-[#FB8500] flex items-center justify-center shrink-0 shadow-sm">
-                                                        <HelpCircle className="w-5 h-5 text-white" />
+                                        {/* BOUTIQUE - Accordion */}
+                                        <AccordionPrimitive.Item value="boutique" className="border-0">
+                                            <AccordionPrimitive.Header className="flex">
+                                                <AccordionPrimitive.Trigger className="flex flex-1 items-center justify-between text-gray-900 font-bold text-lg py-3 px-3 hover:bg-gray-100 rounded-lg transition-colors [&[data-state=open]>svg]:rotate-180">
+                                                    <div className="flex items-center gap-3">
+                                                        <div className="w-10 h-10 rounded-[10px] bg-[#FB8500] flex items-center justify-center shrink-0 shadow-sm">
+                                                            <Store className="w-5 h-5 text-white" />
+                                                        </div>
+                                                        Boutique
                                                     </div>
-                                                    Aide
+                                                    <ChevronDown className="w-5 h-5 text-orange-500 shrink-0 transition-transform duration-200" />
+                                                </AccordionPrimitive.Trigger>
+                                            </AccordionPrimitive.Header>
+                                            <AccordionPrimitive.Content className="pb-0">
+                                                <div className="space-y-1 pl-[52px] pb-3">
+                                                    {shopItems.map((item) => (
+                                                        <Link
+                                                            key={item.href}
+                                                            href={item.href}
+                                                            onClick={() => setMenuOpen(false)}
+                                                            className="block text-gray-700 text-sm py-2.5 px-3 hover:text-orange-600 hover:bg-gray-100 rounded-lg transition-colors"
+                                                        >
+                                                            {item.label}
+                                                        </Link>
+                                                    ))}
                                                 </div>
-                                                <ChevronDown className="w-5 h-5 text-orange-500 shrink-0 transition-transform duration-200" />
-                                            </AccordionPrimitive.Trigger>
-                                        </AccordionPrimitive.Header>
-                                        <AccordionPrimitive.Content className="pb-0">
-                                            <div className="space-y-1 pl-[52px] pb-3">
-                                                {helpItems.map((item) => (
-                                                    <Link
-                                                        key={item.href}
-                                                        href={item.href}
-                                                        onClick={() => setMenuOpen(false)}
-                                                        className="block text-gray-700 text-sm py-2.5 px-3 hover:text-orange-600 hover:bg-gray-100 rounded-lg transition-colors"
-                                                    >
-                                                        {item.label}
-                                                    </Link>
-                                                ))}
-                                            </div>
-                                        </AccordionPrimitive.Content>
-                                    </AccordionPrimitive.Item>
-                                </AccordionPrimitive.Root>
-                            </div>
+                                            </AccordionPrimitive.Content>
+                                        </AccordionPrimitive.Item>
 
-                            {/* Footer */}
-                            <div className="px-4 py-6 space-y-4">
-                                <div className="text-center">
-                                    <h3 className="text-gray-900 font-bold text-base mb-4">Besoin d'assistance?</h3>
-                                    <a
-                                        href="https://wa.me/+22899682556"
-                                        target="_blank"
-                                        rel="noopener noreferrer"
-                                        className="inline-flex items-center justify-center gap-2 w-full bg-orange-500 hover:bg-orange-600 text-white font-semibold py-3 rounded-lg transition-colors"
-                                    >
-                                        <MessageCircle className="w-5 h-5" />
-                                        Contactez-nous sur WhatsApp
-                                    </a>
+                                        {/* AIDE - Accordion */}
+                                        <AccordionPrimitive.Item value="aide" className="border-0">
+                                            <AccordionPrimitive.Header className="flex">
+                                                <AccordionPrimitive.Trigger className="flex flex-1 items-center justify-between text-gray-900 font-bold text-lg py-3 px-3 hover:bg-gray-100 rounded-lg transition-colors [&[data-state=open]>svg]:rotate-180">
+                                                    <div className="flex items-center gap-3">
+                                                        <div className="w-10 h-10 rounded-[10px] bg-[#FB8500] flex items-center justify-center shrink-0 shadow-sm">
+                                                            <HelpCircle className="w-5 h-5 text-white" />
+                                                        </div>
+                                                        Aide
+                                                    </div>
+                                                    <ChevronDown className="w-5 h-5 text-orange-500 shrink-0 transition-transform duration-200" />
+                                                </AccordionPrimitive.Trigger>
+                                            </AccordionPrimitive.Header>
+                                            <AccordionPrimitive.Content className="pb-0">
+                                                <div className="space-y-1 pl-[52px] pb-3">
+                                                    {helpItems.map((item) => (
+                                                        <Link
+                                                            key={item.href}
+                                                            href={item.href}
+                                                            onClick={() => setMenuOpen(false)}
+                                                            className="block text-gray-700 text-sm py-2.5 px-3 hover:text-orange-600 hover:bg-gray-100 rounded-lg transition-colors"
+                                                        >
+                                                            {item.label}
+                                                        </Link>
+                                                    ))}
+                                                </div>
+                                            </AccordionPrimitive.Content>
+                                        </AccordionPrimitive.Item>
+                                    </AccordionPrimitive.Root>
+                                </div>
+
+                                {/* Footer */}
+                                <div className="px-4 py-6 space-y-4">
+                                    <div className="text-center">
+                                        <h3 className="text-gray-900 font-bold text-base mb-4">Besoin d'assistance?</h3>
+                                        <a
+                                            href="https://wa.me/+22899682556"
+                                            target="_blank"
+                                            rel="noopener noreferrer"
+                                            className="inline-flex items-center justify-center gap-2 w-full bg-orange-500 hover:bg-orange-600 text-white font-semibold py-3 rounded-lg transition-colors"
+                                        >
+                                            <MessageCircle className="w-5 h-5" />
+                                            Contactez-nous sur WhatsApp
+                                        </a>
+                                    </div>
                                 </div>
                             </div>
                         </nav>
-                    </>
+                    </div>,
+                    document.body
                 )}
             </div>
 
