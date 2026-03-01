@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import DashScrollLock from "@/components/dashboard/DashScrollLock";
 
 export const metadata: Metadata = {
     title: "Tableau de bord | Korastore Back Office",
@@ -12,8 +13,8 @@ export default function DashboardLayout({
 }) {
     return (
         <>
-            {/* Empêche le scroll au niveau du body pour le dashboard */}
-            <style>{`html, body { height: 100%; overflow: hidden; }`}</style>
+            {/* Gère le scroll lock au niveau du dashboard */}
+            <DashScrollLock />
             {children}
         </>
     );

@@ -31,7 +31,7 @@ export default function DashboardHeader({ isSidebarOpen, onToggleSidebar }: Head
                 href="/"
                 className="flex items-center gap-2 px-3 md:px-4 py-2 rounded-lg text-sm font-medium z-50"
             >
-                <ArrowLeft size={16} />
+                <ArrowLeft className="w-5 h-5 md:w-6 md:h-6" />
             </Link>
         </header>
     );
