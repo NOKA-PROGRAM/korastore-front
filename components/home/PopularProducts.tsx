@@ -15,7 +15,7 @@ export default function PopularProducts() {
                         Produits populaires
                     </h2>
                     <Link
-                        href="/produits"
+                        href="/popular-products"
                         className="text-sm md:text-base text-orange-600 font-bold flex items-center hover:text-orange-700 transition-colors"
                     >
                         Tout voir
